@@ -20,18 +20,18 @@ public class UserService {
     public List<User> findAll(){
         return repo.findAll();
     }
-    
     public User findById(Long id){
         Optional<User> obj = repo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Id not found, try again!", obj));
     }
-
+    public User fromDTO(UserDTO userDTO){
+        return new User(userDTO.id(),userDTO.fullName(),userDTO.email(),userDTO.password());
+    }
     public User creatUser(UserDTO data){
         User newUser = new User(data);
         this.saveUser(newUser);
         return newUser;
     }
-
     public void saveUser(User user){
         repo.save(user);
     }
