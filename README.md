@@ -8,5 +8,10 @@ This project is an API built using **Java, Java Spring,H2 as database and Spring
 
 The main objective of the project is to create an authentication system with login, registration, password recovery and account management. 
 
+# Colaborators
+
+This project was developed by 
+<a href="https://www.linkedin.com/in/erick-miyagi-310016258/" target="blank"/>Erick3232</a> and
+<a href="https://www.linkedin.com/in/leonardo-lermen-768769242/" target="blank"/>leonardolermen</a>
 
 
