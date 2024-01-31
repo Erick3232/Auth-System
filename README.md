@@ -1,9 +1,12 @@
 # Authentication API System
 
-<h1 align="left">Objective: </h1>
-This project is an API built using Spring Boot, Spring Security, Spring Data where the focus is without Security
-The main objective is to create a login system with registration, password recovery and manage accounts
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left">
-<a href="https://www.java.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a></p>
+This project is an API built using **Java, Java Spring,H2 as database and Spring Security and JWT for authentication control** where the focus main is the Security.
+
+The main objective of the project is to create an authentication system with login, registration, password recovery and account management. 
+
+
+
