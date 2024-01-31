@@ -26,7 +26,7 @@ public class UserService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Id not found, try again!", obj));
     }
 
-    public User creaUser(UserDTO data){
+    public User creatUser(UserDTO data){
         User newUser = new User(data);
         this.saveUser(newUser);
         return newUser;

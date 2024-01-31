@@ -1,5 +1,7 @@
 package com.springauth.system.entities;
 
+import com.springauth.system.DTOs.UserDTO;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +20,13 @@ import lombok.Setter;
 @EqualsAndHashCode(of = "id")
 public class User {
 
+    public User(UserDTO data) {
+        this.id = data.id();
+        this.email = data.email();
+        this.fullName = data.fullName();
+        this.password = data.password();
+
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
