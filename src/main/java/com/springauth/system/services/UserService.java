@@ -9,31 +9,31 @@ import org.springframework.stereotype.Service;
 
 import com.springauth.system.DTOs.UserDTO;
 import com.springauth.system.entities.User;
-import com.springauth.system.repositories.UserRepositoy;
+import com.springauth.system.repositories.UserRepository;
 
 @Service
 public class UserService {
     
     @Autowired
-    private UserRepositoy repo;
+    private UserRepository userRepository;
 
-    public List<User> findAll(){
-        return repo.findAll();
+    public List<User> getAllUsers(){
+        return this.userRepository.findAll();
     }
+
     public User findById(Long id){
-        Optional<User> obj = repo.findById(id);
+        Optional<User> obj = userRepository.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Id not found, try again!", obj));
     }
-    public User fromDTO(UserDTO userDTO){
-        return new User(userDTO.id(),userDTO.fullName(),userDTO.email(),userDTO.password());
-    }
-    public User creatUser(UserDTO data){
+
+    public User createUser(UserDTO data){
         User newUser = new User(data);
         this.saveUser(newUser);
         return newUser;
     }
+
     public void saveUser(User user){
-        repo.save(user);
+        userRepository.save(user);
     }
 
 }

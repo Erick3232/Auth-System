@@ -18,18 +18,18 @@ import com.springauth.system.services.UserService;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    
     @Autowired
-    UserService userService;
+    private UserService userService;
+
+    @PostMapping
+    public ResponseEntity<User> createUser(@RequestBody UserDTO user) {
+        User newUser = userService.createUser(user);
+        return new ResponseEntity<>(newUser, HttpStatus.CREATED);
+    }
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll(){
-        List<User> users = this.userService.findAll();
-        return new ResponseEntity<>(users,HttpStatus.OK);
-    }
-    @PostMapping
-    public ResponseEntity<User> create(@RequestBody UserDTO userDTO){
-        User obj = new User(userDTO);
-        return new ResponseEntity<>(obj,HttpStatus.CREATED);
+    public ResponseEntity<List<User>> getAllUsers(){
+        List<User> users = this.userService.getAllUsers();
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 }
