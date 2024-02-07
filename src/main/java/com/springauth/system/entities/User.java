@@ -42,11 +42,12 @@ public class User implements UserDetails {
         this.login = data.login();
         this.id = data.id();
         this.password = data.password();
+        this.role = data.role();
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if(this.role == UserRole.CPF) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        if(this.role == UserRole.CPF) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
         else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 

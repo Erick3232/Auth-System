@@ -1,5 +1,7 @@
 package com.springauth.system.DTOs;
 
-public record UserDTO(Long id, String email, String login, String password) {
+import com.springauth.system.entities.UserRole;
+
+public record UserDTO(Long id, String email, String login, String password, UserRole role) {
  
 }
