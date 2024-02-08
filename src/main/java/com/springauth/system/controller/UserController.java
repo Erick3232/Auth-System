@@ -38,9 +38,9 @@ public class UserController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
     @PutMapping("/{userId}")
-    public ResponseEntity<String> update(@PathVariable Long userId, @RequestBody UpdateRequestService request){
+    public ResponseEntity<String> update(@PathVariable Long userId, @RequestBody UpdateRequestService updateRequestService){
         try {
-            userService.updateData(request, userId);
+            userService.updateData(updateRequestService,userId);
             return ResponseEntity.ok("USUÁRIO ATUALIZADO");
         } catch (UsernameNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("USUÁRIO NÃO ENCONTRADO");
