@@ -40,10 +40,10 @@ public class UserService {
         findById(id);
         userRepository.deleteById(id);
     }
-    public void updateData(UpdateRequestService updateRequest, Long id){
+    public User updateData(UpdateRequestService updateRequestService,Long id){
         User newUser = findById(id);
-        newUser.setEmail(updateRequest.getEmail());
-        newUser.setPassword(updateRequest.getPassword());
+        newUser.setEmail(updateRequestService.getEmail());
+        newUser.setPassword(updateRequestService.getPassword());
+        return userRepository.save(newUser);
     }
-
 }
