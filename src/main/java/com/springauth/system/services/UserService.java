@@ -35,5 +35,15 @@ public class UserService {
     public void saveUser(User user){
         userRepository.save(user);
     }
+    
+    public void delete(Long id){
+        findById(id);
+        userRepository.deleteById(id);
+    }
+    public void updateData(UpdateRequestService updateRequest, Long id){
+        User newUser = findById(id);
+        newUser.setEmail(updateRequest.getEmail());
+        newUser.setPassword(updateRequest.getPassword());
+    }
 
 }
