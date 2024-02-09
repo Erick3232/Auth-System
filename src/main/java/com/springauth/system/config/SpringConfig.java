@@ -18,6 +18,6 @@ public class SpringConfig {
         return httpSecurity.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)).build();
-            }
+    }
     
 }

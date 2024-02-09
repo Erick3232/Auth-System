@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springauth.system.DTOs.UserDTO;
 import com.springauth.system.entities.User;
+import com.springauth.system.exceptions.ResourceNotFoundException;
 import com.springauth.system.services.UpdateRequestService;
 import com.springauth.system.services.UserService;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @RestController
 @RequestMapping("/users")
@@ -37,11 +40,18 @@ public class UserController {
         List<User> users = this.userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
+    @GetMapping("/{userId}")
+    public ResponseEntity<User> findById(@PathVariable Long userId){ // add findById Get
+        User newUser = userService.findById(userId);
+        return new ResponseEntity<>(newUser, HttpStatus.OK);
+    }
     @PutMapping("/{userId}")
     public ResponseEntity<String> update(@PathVariable Long userId, @RequestBody UpdateRequestService updateRequestService){
         try {
             userService.updateData(updateRequestService,userId);
             return ResponseEntity.ok("USUÁRIO ATUALIZADO");
+        }catch(EntityNotFoundException e){
+            throw new ResourceNotFoundException(userId);
         } catch (UsernameNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("USUÁRIO NÃO ENCONTRADO");
         }
@@ -52,6 +62,8 @@ public class UserController {
         try{
             userService.delete(userId);
             return ResponseEntity.ok("USUÁRIO EXCLUIDO");
+        }catch(EntityNotFoundException e){ //add exception customized
+            throw new ResourceNotFoundException(userId);
         }catch(UsernameNotFoundException e){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("USUÁRIO NÃO ENCONTRADO");
         }
