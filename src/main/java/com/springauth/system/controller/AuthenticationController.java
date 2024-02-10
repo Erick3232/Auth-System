@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,24 +28,26 @@ public class AuthenticationController {
     @Autowired
     private UserRepository userRepository;
 
+    
+
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody @Valid AuthenticationDTO data) {
+    public ResponseEntity login(@RequestBody AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody RegisterDTO data) {
-        if (this.userRepository.findByDocument(data.document()) != null) {
-            return ResponseEntity.badRequest().build();
-        } else {
-            String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
-            User newUser = new User(data);
-            newUser.setPassword(encryptedPassword);
+    public ResponseEntity register(@RequestBody @Valid RegisterDTO data) {
+        if (this.userRepository.findByDocument(data.document()) == null) {
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            
+            User newUser = new User(data.login(), data.password(), data.role());
+
             this.userRepository.save(newUser);
 
             return ResponseEntity.ok().build();
         }
+        return null;
     }
 }
