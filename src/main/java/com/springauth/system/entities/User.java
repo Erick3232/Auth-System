@@ -50,6 +50,8 @@ public class User implements UserDetails {
         this.login = data.login();
         this.password = encodedPassword;
         this.role = data.role();
+        this.document = data.document();
+        this.email = data.email();
     }
 
     @Override
