@@ -3,12 +3,12 @@ package com.springauth.system.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springauth.system.DTOs.UserDTO;
 import com.springauth.system.entities.User;
+import com.springauth.system.exceptions.ResourceNotFoundException;
 import com.springauth.system.repositories.UserRepository;
 
 @Service
@@ -23,7 +23,7 @@ public class UserService {
 
     public User findById(Long id){
         Optional<User> obj = userRepository.findById(id);
-        return obj.orElseThrow(() -> new ObjectNotFoundException("Id not found, try again!", obj));
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
     public User createUser(UserDTO data){
