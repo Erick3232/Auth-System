@@ -16,13 +16,7 @@ public class SpringConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         return httpSecurity.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session
-<<<<<<< HEAD
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
             }
-=======
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)).build();
-    }
-    
->>>>>>> 189079dc71d8c7126640dda812a00ba9b7b98c47
 }
