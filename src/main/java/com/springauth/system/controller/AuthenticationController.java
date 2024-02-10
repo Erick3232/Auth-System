@@ -34,6 +34,7 @@ public class AuthenticationController {
         return ResponseEntity.ok().build();
     }
 
+
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody RegisterDTO data) {
         if (this.userRepository.findByDocument(data.document()) == null) {
