@@ -45,10 +45,10 @@ public class User implements UserDetails {
         this.role = data.role();
     }
 
-    public User(String login, String password, UserRole role){
-        this.login = login;
-        this.password = password;
-        this.role = role;
+    public User(RegisterDTO data, String encodedPassword){
+        this.login = data.login();
+        this.password = encodedPassword;
+        this.role = data.role();
     }
 
     @Override

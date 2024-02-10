@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import com.springauth.system.DTOs.RegisterDTO;
 import com.springauth.system.DTOs.UserDTO;
 import com.springauth.system.entities.User;
 import com.springauth.system.exceptions.ResourceNotFoundException;
@@ -26,8 +28,19 @@ public class UserService {
         return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
+    public User findByDocument(String document){
+        User findedUser = userRepository.findByDocument(document);
+        return findedUser;
+    }
+
     public User createUser(UserDTO data){
         User newUser = new User(data);
+        this.saveUser(newUser);
+        return newUser;
+    }
+
+    public User registerUser(RegisterDTO data, String encodedPassword){
+        User newUser = new User(data, encodedPassword);
         this.saveUser(newUser);
         return newUser;
     }
