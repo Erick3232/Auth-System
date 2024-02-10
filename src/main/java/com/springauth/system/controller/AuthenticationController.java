@@ -36,16 +36,15 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody RegisterDTO data) {
-        if (this.userRepository.findByDocument(data.document()) == null) {
+        if (this.userRepository.findByDocument(data.document()) != null) {
+            return ResponseEntity.badRequest().build();
+        } else {
             String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
             User newUser = new User(data);
-
+            newUser.setPassword(encryptedPassword);
             this.userRepository.save(newUser);
 
             return ResponseEntity.ok().build();
-
-        } else {
-            return ResponseEntity.badRequest().build();
         }
     }
 }
