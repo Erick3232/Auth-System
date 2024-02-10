@@ -15,7 +15,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -84,8 +83,7 @@ public class User implements UserDetails {
         return true;
     }
 
-    public User(@Valid RegisterDTO data) {
-        //TODO Auto-generated constructor stub
+    public User(RegisterDTO data) {
         this.email = data.email();
         this.login = data.login();
         this.password = data.password();
