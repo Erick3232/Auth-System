@@ -83,7 +83,8 @@ public class User implements UserDetails {
         return true;
     }
 
-    public User(RegisterDTO data) {
+    public User(@Valid RegisterDTO data) {
+        //TODO Auto-generated constructor stub
         this.email = data.email();
         this.login = data.login();
         this.password = data.password();
