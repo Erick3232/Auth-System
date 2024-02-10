@@ -43,7 +43,8 @@ public class AuthController {
         String encoded = new BCryptPasswordEncoder().encode(data.password());
         User newUser = userService.registerUser(data, encoded);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
-        } else return ResponseEntity.badRequest().build();
+        } 
+        else return ResponseEntity.badRequest().build();
     }
 
     @PostMapping("/login")
