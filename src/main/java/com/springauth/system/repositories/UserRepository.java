@@ -9,5 +9,5 @@ import com.springauth.system.entities.User;
 
 public interface UserRepository extends JpaRepository<User,Long>{
    UserDetails findByLogin(String fullname);
-   Optional<User> findByDocumentOrEmail(String document, String email);
+   UserDetails findByDocument(String document);
 }
