@@ -1,6 +1,5 @@
 package com.springauth.system.config;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,7 +16,7 @@ public class SpringConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
         return httpSecurity.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)).build();
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .build();
             }
-    
 }
