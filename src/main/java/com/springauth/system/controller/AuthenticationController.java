@@ -47,7 +47,8 @@ public class AuthenticationController {
             this.userRepository.save(newUser);
 
             return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.badRequest().build();
         }
-        return null;
     }
 }
