@@ -42,8 +42,14 @@ public class UserController {
     }
     @GetMapping("/{userId}")
     public ResponseEntity<User> findById(@PathVariable Long userId){ // add findById Get
-        User newUser = userService.findById(userId);
-        return new ResponseEntity<>(newUser, HttpStatus.OK);
+        try{
+            User newUser = userService.findById(userId);
+            return new ResponseEntity<>(newUser, HttpStatus.OK);
+        }catch(EntityNotFoundException e){
+            throw new ResourceNotFoundException(userId);
+        }catch(UsernameNotFoundException e){
+            return ResponseEntity.noContent().build();
+        }
     }
     @PutMapping("/{userId}")
     public ResponseEntity<String> update(@PathVariable Long userId, @RequestBody UpdateRequestService updateRequestService){
