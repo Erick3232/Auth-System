@@ -6,16 +6,13 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import com.springauth.system.DTOs.RegisterDTO;
 import com.springauth.system.DTOs.UserDTO;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -46,6 +43,12 @@ public class User implements UserDetails {
         this.id = data.id();
         this.password = data.password();
         this.role = data.role();
+    }
+
+    public User(String login, String password, UserRole role){
+        this.login = login;
+        this.password = password;
+        this.role = role;
     }
 
     @Override
@@ -84,12 +87,4 @@ public class User implements UserDetails {
         return true;
     }
 
-    public User(RegisterDTO data) {
-        //TODO Auto-generated constructor stub
-        this.email = data.email();
-        this.login = data.login();
-        this.password = data.password();
-        this.role = data.role();
-        this.document = data.document();
-    }
 }
