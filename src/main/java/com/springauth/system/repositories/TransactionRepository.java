@@ -1,8 +1,11 @@
 package com.springauth.system.repositories;
 
 import com.springauth.system.entities.Transaction;
-import org.springframework.data.jpa.repository.cdi.JpaRepositoryExtension;
 
-public class TransactionRepository extends JpaRepositoryExtension<Transaction, Long> {
-    
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+    Optional<Transaction>findById(Long id);
 }

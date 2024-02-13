@@ -1,5 +1,6 @@
 package com.springauth.system.entities;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.List;
 
@@ -37,6 +38,7 @@ public class User implements UserDetails {
     private String password;
     private String document;
     private UserRole role;
+    private BigDecimal balance;
 
     public User(UserDTO data) {
         this.email = data.email();
