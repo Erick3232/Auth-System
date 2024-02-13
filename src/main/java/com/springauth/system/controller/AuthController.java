@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.springauth.system.DTOs.AuthenticationDTO;
 import com.springauth.system.DTOs.RegisterDTO;
 import com.springauth.system.entities.User;
@@ -31,7 +30,8 @@ public class AuthController {
         String encoded = new BCryptPasswordEncoder().encode(data.password());
         User newUser = userService.registerUser(data, encoded);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
-        } else return ResponseEntity.badRequest().build();
+        } 
+        else return ResponseEntity.badRequest().build();
     }
 
     @PostMapping("/login")
