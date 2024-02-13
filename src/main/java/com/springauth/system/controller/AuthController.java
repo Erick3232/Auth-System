@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.springauth.system.DTOs.AuthenticationDTO;
+import com.springauth.system.DTOs.LoginResponseDTO;
 import com.springauth.system.DTOs.RegisterDTO;
 import com.springauth.system.entities.User;
+import com.springauth.system.services.TokenService;
 import com.springauth.system.services.UserService;
 
 @RestController
@@ -23,6 +25,9 @@ public class AuthController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private TokenService tokenService;
 
     @PostMapping("/register")
     public ResponseEntity<User> createUser(@RequestBody RegisterDTO data) {
@@ -35,10 +40,11 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<User> login(@RequestBody AuthenticationDTO data) {
+    public ResponseEntity login(@RequestBody AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
-        return ResponseEntity.ok().build();
+        var generateToken = tokenService.generateToken((User) auth.getPrincipal());
+        return ResponseEntity.ok(new LoginResponseDTO(generateToken));
     }
    
 }
