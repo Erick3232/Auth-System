@@ -1,4 +1,4 @@
-package com.springauth.system.services;
+package com.springauth.system.services.user;
 
 import java.util.List;
 import java.util.Optional;

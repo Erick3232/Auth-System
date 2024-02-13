@@ -1,4 +1,4 @@
-package com.springauth.system.services;
+package com.springauth.system.services.bank;
 
 import org.springframework.stereotype.Service;
 

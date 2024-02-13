@@ -1,4 +1,4 @@
-package com.springauth.system.services;
+package com.springauth.system.services.token;
 
 import java.time.Instant;
 import java.time.LocalDateTime;

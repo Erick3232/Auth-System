@@ -1,4 +1,4 @@
-package com.springauth.system.services;
+package com.springauth.system.services.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

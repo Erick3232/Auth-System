@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springauth.system.DTOs.UserDTO;
 import com.springauth.system.entities.User;
 import com.springauth.system.exceptions.ResourceNotFoundException;
-import com.springauth.system.services.UpdateRequestService;
-import com.springauth.system.services.UserService;
+import com.springauth.system.services.user.UpdateRequestService;
+import com.springauth.system.services.user.UserService;
 
 import jakarta.persistence.EntityNotFoundException;
 

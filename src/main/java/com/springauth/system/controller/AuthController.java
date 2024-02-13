@@ -14,8 +14,8 @@ import com.springauth.system.DTOs.AuthenticationDTO;
 import com.springauth.system.DTOs.LoginResponseDTO;
 import com.springauth.system.DTOs.RegisterDTO;
 import com.springauth.system.entities.User;
-import com.springauth.system.services.TokenService;
-import com.springauth.system.services.UserService;
+import com.springauth.system.services.token.TokenService;
+import com.springauth.system.services.user.UserService;
 
 @RestController
 @RequestMapping("/auth")

@@ -1,4 +1,4 @@
-package com.springauth.system.services;
+package com.springauth.system.services.bank;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
