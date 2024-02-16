@@ -17,6 +17,10 @@ import com.springauth.system.entities.User;
 import com.springauth.system.services.token.TokenService;
 import com.springauth.system.services.user.UserService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "Register and Login", description = "API for Register and Login controllers")
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -29,6 +33,7 @@ public class AuthController {
     @Autowired
     private TokenService tokenService;
 
+    @Operation(summary = "Register operation")
     @PostMapping("/register")
     public ResponseEntity<User> createUser(@RequestBody RegisterDTO data) {
         if(userService.findByDocument(data.document()) == null ){
@@ -39,6 +44,7 @@ public class AuthController {
         else return ResponseEntity.badRequest().build();
     }
 
+    @Operation(summary = "Login operation")
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());

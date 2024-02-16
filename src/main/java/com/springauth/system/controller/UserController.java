@@ -21,24 +21,30 @@ import com.springauth.system.exceptions.ResourceNotFoundException;
 import com.springauth.system.services.user.UpdateRequestService;
 import com.springauth.system.services.user.UserService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.EntityNotFoundException;
 
+@Tag(name = "Users", description = "API Users for controllers")
 @RestController
 @RequestMapping("/users")
 public class UserController {
     @Autowired
     private UserService userService;
 
+    @Operation(summary = "Create User operation")
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody UserDTO user) {
         User newUser = userService.createUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
+    @Operation(summary = "Get All Users operation")
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(){
         List<User> users = this.userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
+    @Operation(summary = "Get User with ID")
     @GetMapping("/{userId}")
     public ResponseEntity<User> findById(@PathVariable Long userId){ // add findById Get
         try{
@@ -50,6 +56,7 @@ public class UserController {
             return ResponseEntity.noContent().build();
         }
     }
+    @Operation(summary = "Update User operation")
     @PutMapping("/{userId}")
     public ResponseEntity<String> update(@PathVariable Long userId, @RequestBody UpdateRequestService updateRequestService){
         try {
@@ -62,6 +69,7 @@ public class UserController {
         }
     }
 
+    @Operation(summary = "Delete User operation")
     @DeleteMapping("/{userId}")
     public ResponseEntity<String> delete(@PathVariable Long userId){
         try{
