@@ -32,7 +32,7 @@ public class OpenAPIConfig {
 
         Contact contact = new Contact();
         contact.setName("Project Github");
-        contact.setUrl("https://github.com/Erick3232/Auth-System");
+        contact.setUrl("https://github.com/ErickMiyagi/Auth-System");
 
         License mitLicense = new License().name("MIT LICENSE").url("https://choosealicense.com/licenses/mit/");
 
