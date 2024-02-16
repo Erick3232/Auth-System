@@ -39,6 +39,7 @@ public class User implements UserDetails {
     private String document;
     private UserRole role;
     private BigDecimal balance;
+    
 
     public User(UserDTO data) {
         this.email = data.email();
@@ -54,6 +55,7 @@ public class User implements UserDetails {
         this.role = data.role();
         this.document = data.document();
         this.email = data.email();
+        this.balance = BigDecimal.ZERO;
     }
 
     @Override

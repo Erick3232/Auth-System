@@ -2,6 +2,7 @@ package com.springauth.system.services.bank;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,5 +46,9 @@ public class TransactionService {
         transactionRepository.save(newTransaction);
 
         return newTransaction;
+    }
+
+    public List<Transaction> getAllTransactions(){
+        return this.transactionRepository.findAll();
     }
 }

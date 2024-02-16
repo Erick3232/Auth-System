@@ -36,7 +36,7 @@ public class AuthController {
     @Operation(summary = "Register operation")
     @PostMapping("/register")
     public ResponseEntity<User> createUser(@RequestBody RegisterDTO data) {
-        if(userService.findByDocument(data.document()) == null ){
+        if(userService.findByDocument(data.document()) == null){
         String encoded = new BCryptPasswordEncoder().encode(data.password());
         User newUser = userService.registerUser(data, encoded);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);

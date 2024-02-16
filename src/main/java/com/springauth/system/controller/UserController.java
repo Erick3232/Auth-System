@@ -29,6 +29,7 @@ import jakarta.persistence.EntityNotFoundException;
 @RestController
 @RequestMapping("/users")
 public class UserController {
+    
     @Autowired
     private UserService userService;
 
@@ -38,12 +39,14 @@ public class UserController {
         User newUser = userService.createUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
+
     @Operation(summary = "Get All Users operation")
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(){
         List<User> users = this.userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
+
     @Operation(summary = "Get User with ID")
     @GetMapping("/{userId}")
     public ResponseEntity<User> findById(@PathVariable Long userId){ // add findById Get
@@ -56,6 +59,7 @@ public class UserController {
             return ResponseEntity.noContent().build();
         }
     }
+
     @Operation(summary = "Update User operation")
     @PutMapping("/{userId}")
     public ResponseEntity<String> update(@PathVariable Long userId, @RequestBody UpdateRequestService updateRequestService){

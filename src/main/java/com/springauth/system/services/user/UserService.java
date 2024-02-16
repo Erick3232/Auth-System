@@ -52,10 +52,12 @@ public class UserService {
         findById(id);
         userRepository.deleteById(id);
     }
+
     public User updateData(UpdateRequestService updateRequestService,Long id){
         User newUser = findById(id);
         newUser.setEmail(updateRequestService.getEmail());
         newUser.setPassword(updateRequestService.getPassword());
         return userRepository.save(newUser);
     }
+    
 }
