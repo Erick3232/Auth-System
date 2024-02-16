@@ -60,7 +60,7 @@ Todas as referências do nosso projeto foram retiradas da documentação do [Spr
 # Colaborators
 
 This project was developed by 
-<a href="https://www.linkedin.com/in/erick-miyagi-310016258/" target="blank"/>Erick3232</a> and
+<a href="https://www.linkedin.com/in/erick-miyagi-310016258/" target="blank"/>ErickMiyagi</a> and
 <a href="https://www.linkedin.com/in/leonardo-lermen-768769242/" target="blank"/>leonardolermen</a>
 
 
