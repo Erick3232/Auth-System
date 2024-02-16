@@ -1,7 +1,5 @@
 package com.springauth.system.controller;
 
-import java.math.BigDecimal;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +15,11 @@ import com.springauth.system.exceptions.ResourceNotFoundException;
 import com.springauth.system.services.bank.AcountService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.persistence.EntityNotFoundException;
 
 @RestController
+@Tag(name = "Wallet User", description = "API Wallet for controllers")
 @RequestMapping("/wallet")
 public class WalletController {
 

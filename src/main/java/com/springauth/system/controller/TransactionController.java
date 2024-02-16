@@ -15,7 +15,9 @@ import com.springauth.system.entities.Transaction;
 import com.springauth.system.services.bank.TransactionService;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Transactions", description = "API Transactions for controllers")
 @RestController
 @RequestMapping("/transactions")
 public class TransactionController {
