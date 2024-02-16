@@ -14,7 +14,7 @@ The main objective of the project is to create an authentication system with log
 
 - Framework: Spring Boot | Spring Data | Spring Security 
 
-- Ferramentas: Postman, Apache Maven, Swagger
+- Ferramentas: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
 
 
 ## Roadmap
