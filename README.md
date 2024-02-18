@@ -25,6 +25,8 @@ The main objective of the project is to create an authentication system with log
 
 - Injeção de Dependências e Inversão de controle
 
+![api](api.png)
+
 
 
 ## Documentação da API
