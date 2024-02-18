@@ -24,7 +24,6 @@ public class SpringConfig{
                 .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
-                .requestMatchers(HttpMethod.GET, "/swagger-ui.html").permitAll()
                 .anyRequest().permitAll()
                 )
                 .build();
