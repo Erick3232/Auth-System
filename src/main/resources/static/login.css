@@ -21,9 +21,9 @@ body {
 }
 .container {
   max-width: 700px;
-  width: 50%;
+  width: 40%;
   background-color: #fff;
-  padding: 25px 30px;
+  padding: 25px 20px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
@@ -49,7 +49,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
-    justify-content: center;
+    justify-content: start;
   }
   
   form .user-details .input-box {
@@ -64,7 +64,7 @@ body {
   }
   .user-details .input-box input {
     height: 45px;
-    width: 110%;
+    width: 150%;
     outline: none;
     font-size: 16px;
     border-radius: 5px;
@@ -96,7 +96,7 @@ body {
   
   form .button input {
     height: 100%;
-    width: 80%;
+    width: 100%;
     border-radius: 5px;
     border: none;
     color: #fff;
