@@ -36,8 +36,15 @@ public class AuthController {
     @Autowired
     private TokenService tokenService;
 
+    @GetMapping("/register")
+    public ModelAndView index(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("register");
+        return mv;
+    }
+
     @Operation(summary = "Register operation")
-    @PostMapping("/register")
+    @PostMapping("/registered")
     public ResponseEntity<User> createUser(@RequestBody RegisterDTO data) {
         if(userService.findByDocument(data.document()) == null){
         String encoded = new BCryptPasswordEncoder().encode(data.password());
@@ -47,8 +54,15 @@ public class AuthController {
         else return ResponseEntity.badRequest().build();
     }
 
+    @GetMapping("/login")
+    public ModelAndView index2(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("login");
+        return mv;
+    }
+
     @Operation(summary = "Login operation")
-    @PostMapping("/login")
+    @PostMapping("/loged")
     public ResponseEntity login(@RequestBody AuthenticationDTO data) {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);

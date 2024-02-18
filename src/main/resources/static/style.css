@@ -138,9 +138,12 @@ form .button input {
   transition: all 0.3s ease;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-
+.buttonLogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 form .button input:hover {
-  /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
 
