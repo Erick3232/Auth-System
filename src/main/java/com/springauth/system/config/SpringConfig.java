@@ -24,10 +24,8 @@ public class SpringConfig{
                 .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
-                .anyRequest().permitAll()
-                )
-                .build();
-                
+                .requestMatchers("/h2-console/**").permitAll().anyRequest().permitAll())
+                .headers(headers -> headers.frameOptions().disable()).build();
             }
     
     @Bean
