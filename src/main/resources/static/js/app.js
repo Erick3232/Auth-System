@@ -1,0 +1,46 @@
+function submitForm() {
+  const fullNameInput = document.getElementById('fullName').value;
+  const emailInput = document.getElementById('email').value;
+  const documentInput = document.getElementById('document').value;
+  const passwordInput = document.getElementById('password').value;
+  const confirmPasswordInput = document.getElementById('confirmPassword').value;
+  const roleInput = document.querySelector('input[name="type"]:checked').id === 'personTypeCPF' ? 'CPF' : 'CNPJ';
+
+  // Verifique se os campos de senha coincidem
+  if (passwordInput !== confirmPasswordInput) {
+    alert('Password and Confirm Password do not match');
+    return;
+  }
+
+  const data = {
+    login: fullNameInput,
+    email: emailInput,
+    document: documentInput,
+    password: passwordInput,
+    role: roleInput
+  };
+
+  // Enviar dados para o backend
+  fetch('/auth/process', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Registration failed');
+    }
+    return response.json();
+  })
+  .then(data => {
+    alert('Registration successful');
+    // Redirecionar para a página de login após o registro bem-sucedido
+    window.location.href = '/auth/login';
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Registration failed');
+  });
+}
