@@ -28,19 +28,13 @@ function submitForm() {
     },
     body: JSON.stringify(data)
   })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Registration failed');
-    }
-    return response.json();
-  })
-  .then(data => {
-    alert('Registration successful');
-    // Redirecionar para a página de login após o registro bem-sucedido
-    window.location.href = '/auth/login';
-  })
-  .catch(error => {
-    console.error('Error:', error);
-    alert('Registration failed');
-  });
+    
+    .then(data => {
+      // Redirecionar para a página de login após o registro bem-sucedido
+      window.location.href = '/auth/login';
+    })
+    .catch(error => {
+      console.error('Error during registration:', error);
+      alert('Registration failed');
+    });
 }
