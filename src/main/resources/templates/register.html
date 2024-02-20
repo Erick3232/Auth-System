@@ -14,18 +14,18 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <input type="text" placeholder="Enter your name" id="fullName" required>
           </div>
-          <div class="personType-details">
-            <input type="radio" name="type" id="dot-1">
-            <input type="radio" name="type" id="dot-2">
+          <div class="personType-details" >
+            <input type="radio" name="type" id="personTypeCPF">
+            <input type="radio" name="type" id="personTypeCNPJ">
             <span class="type-title">Person Type</span>
             <div class="category">
-              <label for="dot-1">
+              <label for="personTypeCPF">
               <span class="dot one"></span>
               <span class="type">CPF</span>
             </label>
-            <label for="dot-2">
+            <label for="personTypeCNPJ">
               <span class="dot two"></span>
               <span class="type">CNPJ</span>
             </label>
@@ -33,28 +33,28 @@
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
+            <input type="text" placeholder="Enter your email" id="email" required>
           </div>
           <div class="input-box">
             <span class="details">Document</span>
-            <input type="text" placeholder="Enter your Document" required>
+            <input type="text" placeholder="Enter your Document" id="document" required>
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="password" placeholder="Enter your password" required>
+            <input type="password" placeholder="Enter your password" id="password" required>
           </div>
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="password" placeholder="Confirm your password" required>
+            <input type="password" placeholder="Confirm your password" id="confirmPassword" required>
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" value="Register" onclick="submitForm()">
         </div>
         <a class="buttonLogin" href="/auth/login">Login</a>
       </form>
+      <script src="/src/main/resources/static/app.js"></script>
     </div>
   </div>
-
 </body>
 </html>
