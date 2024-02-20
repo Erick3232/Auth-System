@@ -1,22 +1,28 @@
-function Login(){
-    const login = document.getElementById('login')
-    const loginPasword = document.getElementById('loginPassword')
-  
-    fetch('/auth/process-Login', {
+function login(){
+  const login = document.getElementById('login').value;
+  const loginPassword = document.getElementById('loginPassword').value;
+
+  const data = {
+      login: login,
+      password: loginPassword
+  };
+
+  fetch('/auth/processLogin', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+          'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
-    })
-    .then(response => {
+  })
+  .then(response => {
       if (!response.ok) {
-        throw new Error('Login failed');
+          throw new Error('Login failed');
       }
-      return response.json();
-    })
-    .then(data => {
       alert('Login successful');
-      window.location.href = '/wallet';
-    })
-  }
+      window.location.href = 'https://localhost:8080/wallet';
+  })
+  .catch(error => {
+      console.error('Error during login:', error);
+      alert('Login failed');
+  });
+}

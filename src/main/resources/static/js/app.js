@@ -20,17 +20,19 @@ function submitForm() {
     role: roleInput
   };
 
+
   // Enviar dados para o backend
   fetch('/auth/process', {
     method: 'POST',
     headers: {
+      'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
   })
-    
     .then(data => {
       // Redirecionar para a página de login após o registro bem-sucedido
+      alert('USUARIO CRIADO');
       window.location.href = '/auth/login';
     })
     .catch(error => {
