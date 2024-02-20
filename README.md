@@ -28,6 +28,12 @@ The main objective of the project is to create an authentication system with log
 ![image](https://github.com/ErickMiyagi/Auth-System/assets/90419609/ed0fbf09-87f6-4d41-b426-1b47047eb5ef)
 
 
+- Desenvolvimento da class User e suas ferramentas na produção
+
+
+![image](user.png)
+
+
 
 
 
