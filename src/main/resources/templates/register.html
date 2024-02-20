@@ -17,8 +17,8 @@
             <input type="text" placeholder="Enter your name" id="fullName" required>
           </div>
           <div class="personType-details" >
-            <input type="radio" name="type" id="personTypeCPF">
-            <input type="radio" name="type" id="personTypeCNPJ">
+            <input type="radio" name="type" id="personTypeCPF" onclick="personTypeChange('CPF')">
+            <input type="radio" name="type" id="personTypeCNPJ" onclick="personTypeChange('CNPJ')">
             <span class="type-title">Person Type</span>
             <div class="category">
               <label for="personTypeCPF">
@@ -35,7 +35,7 @@
             <span class="details">Email</span>
             <input type="text" placeholder="Enter your email" id="email" required>
           </div>
-          <div class="input-box">
+          <div class="input-box" id="documentInputBox">
             <span class="details">Document</span>
             <input type="text" placeholder="Enter your Document" id="document" required>
           </div>
