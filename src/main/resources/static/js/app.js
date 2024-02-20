@@ -6,11 +6,12 @@ function submitForm() {
   const confirmPasswordInput = document.getElementById('confirmPassword').value;
   const roleInput = document.querySelector('input[name="type"]:checked').id === 'personTypeCPF' ? 'CPF' : 'CNPJ';
 
-  // Verifique se os campos de senha coincidem
   if (passwordInput !== confirmPasswordInput) {
     alert('Password and Confirm Password do not match');
     return;
   }
+
+  
 
   const data = {
     login: fullNameInput,
@@ -20,7 +21,6 @@ function submitForm() {
     role: roleInput
   };
 
-  // Enviar dados para o backend
   fetch('/auth/process', {
     method: 'POST',
     headers: {
@@ -30,11 +30,50 @@ function submitForm() {
   })
     
     .then(data => {
-      // Redirecionar para a página de login após o registro bem-sucedido
       window.location.href = '/auth/login';
     })
     .catch(error => {
       console.error('Error during registration:', error);
       alert('Registration failed');
     });
+}
+window.onload = function() {
+  var documentInput = document.getElementById('document');
+
+  documentInput.addEventListener('input', function() {
+    var value = documentInput.value.replace(/\D/g, '');
+    var roleInput = document.querySelector('input[name="type"]:checked').id;
+    var formattedValue;
+    
+    if (roleInput === 'personTypeCPF') {
+      formattedValue = formatCPF(value); 
+    } else if (roleInput === 'personTypeCNPJ') {
+      formattedValue = formatCNPJ(value); 
+    }
+
+    documentInput.value = formattedValue;
+  });
+  function formatCPF(value) {
+    var formattedValue = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+    return formattedValue;
+  }
+  function formatCNPJ(value) {
+    var formattedValue = value.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5');
+    return formattedValue;
+  }
+};
+
+function personTypeChange(type) {
+  var documentInput = document.getElementById('document');
+
+  if (type === 'CPF') {
+    documentInput.setAttribute('pattern', '\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}');
+    documentInput.setAttribute('maxlength', '14');
+  } else if (type === 'CNPJ') {
+    documentInput.setAttribute('pattern', '\\d{2}\\.\\d{3}\\.\\d{3}/\\d{4}-\\d{2}');
+    documentInput.setAttribute('maxlength', '18');
+  } else {
+    documentInput.removeAttribute('pattern');
+    documentInput.removeAttribute('maxlength');
+  }
 }
