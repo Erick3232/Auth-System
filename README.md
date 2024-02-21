@@ -8,13 +8,13 @@ This project is an API built using **Java, Java Spring,H2 as database and Spring
 
 The main objective of the project is to create an authentication system with login, registration, password recovery and account management. 
 ## 🛠 Skills
-- Banco de Dados: MongoDB, H2 DataBase, SQL
+- 🛢️ Banco de Dados: MongoDB, H2 DataBase, SQL
 
-- Back-End: Java
+- ☕ Language: Java | HTML | CSS | JavScript 
 
-- Framework: Spring Boot | Spring Data | Spring Security 
+- 🛠 Framework: Spring Boot 3 | Spring Data | Spring Security 6
 
-- Ferramentas: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
+- 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
 
 
 ## Roadmap
@@ -25,7 +25,7 @@ The main objective of the project is to create an authentication system with log
 
 - Injeção de Dependências e Inversão de controle
 
--Arquitetura Hexagonal e DDD(Domain-Driver Design) 
+- Arquitetura Hexagonal e DDD(Domain-Driver Design) 
 
 ![image](https://github.com/ErickMiyagi/Auth-System/assets/90419609/ed0fbf09-87f6-4d41-b426-1b47047eb5ef)
 
@@ -53,7 +53,7 @@ The main objective of the project is to create an authentication system with log
 | :---------- | :--------- | :---------------------------------- |
 | `users` | `string` | **Retorna todos os usuários** |
 
-#### Retorna um item
+#### Retorna um usuário
 
 ```http
   GET /users/id
@@ -63,7 +63,28 @@ The main objective of the project is to create an authentication system with log
 | :---------- | :--------- | :------------------------------------------ |
 | `id`      | `Long` | **Retorna usuário por ID** |
 
-#### 
+#### Deleta um usuário
+
+```http
+  DELETE /users/id
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `id`      | `Long` | **Deleta usuário por ID** |
+
+#### Cria um usuário
+
+```http
+  POST /users/auth/register
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `login`      | `String` | **Cria um login** |
+| `password`   | `String` | **Cria uma senha** |
+| `email`      | `String` | **Cria um email** |
+| `roles`      | `Role`   | **Cria um CPF ou CNPJ** |
 
 
 
