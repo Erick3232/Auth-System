@@ -10,9 +10,7 @@ function submitForm() {
     alert('Password and Confirm Password do not match');
     return;
   }
-
   
-
   const data = {
     login: fullNameInput,
     email: emailInput,
@@ -27,15 +25,14 @@ function submitForm() {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
-  })
-    
-    .then(data => {
+  }).then(response => {
+    if (response.ok) {
       window.location.href = '/auth/login';
-    })
-    .catch(error => {
-      console.error('Error during registration:', error);
-      alert('Registration failed');
-    });
+    }
+  }).catch(error => {
+    console.log(emailInput);
+    alert('Registration failed');
+  });
 }
 window.onload = function() {
   var documentInput = document.getElementById('document');
@@ -44,7 +41,7 @@ window.onload = function() {
     var value = documentInput.value.replace(/\D/g, '');
     var roleInput = document.querySelector('input[name="type"]:checked').id;
     var formattedValue;
-    
+
     if (roleInput === 'personTypeCPF') {
       formattedValue = formatCPF(value); 
     } else if (roleInput === 'personTypeCNPJ') {
