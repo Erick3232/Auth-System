@@ -33,7 +33,7 @@ function submitForm() {
       alert('Usuário cadastrado');
       window.location.href = '/auth/login';
     } else {
-      alert('Erro ao criar usuário');
+      alert('CPF/CNPJ already exist');
       window.location.reload();
     }
   });
