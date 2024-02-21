@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.springauth.system.DTOs.BalanceDTO;
 import com.springauth.system.exceptions.ResourceNotFoundException;
@@ -25,6 +27,13 @@ public class WalletController {
 
     @Autowired
     private AcountService acountService;
+
+    @GetMapping("/dashboard")
+    public ModelAndView index(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("dashboard");
+        return mv;
+    }
 
     @Operation(summary = "Update User Balance")
     @PutMapping("/{userId}")

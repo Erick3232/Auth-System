@@ -17,7 +17,7 @@ function submitForm(){
     .then(response => {
       if (response.ok) {
         alert('Login successful');
-        window.location.href = '/dashboard'; // Redirecionar para a página de dashboard após o login bem-sucedido
+        window.location.href = '/dist/dashboard'; // Redirecionar para a página de dashboard após o login bem-sucedido
       } else {
         alert('Login failed. Please check your credentials and try again.');
       }
