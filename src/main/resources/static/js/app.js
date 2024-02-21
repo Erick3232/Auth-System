@@ -11,8 +11,6 @@ function submitForm() {
     return;
   }
 
-  
-
   const data = {
     login: fullNameInput,
     email: emailInput,
@@ -21,11 +19,6 @@ function submitForm() {
     role: roleInput
   };
 
-<<<<<<< HEAD
-
-  // Enviar dados para o backend
-=======
->>>>>>> 28d02990cc1ebbdcaeaf9f23e3b39b3a0d7af3cf
   fetch('/auth/process', {
     method: 'POST',
     headers: {
@@ -34,18 +27,22 @@ function submitForm() {
     },
     body: JSON.stringify(data)
   })
-    .then(data => {
-<<<<<<< HEAD
-      // Redirecionar para a página de login após o registro bem-sucedido
-      alert('USUARIO CRIADO');
-=======
->>>>>>> 28d02990cc1ebbdcaeaf9f23e3b39b3a0d7af3cf
+  .then(response => {
+    if (response.status === 201) {
+      alert('Usuário cadastrado');
       window.location.href = '/auth/login';
-    })
-    .catch(error => {
-      console.error('Error during registration:', error);
-      alert('Registration failed');
-    });
+    } else {
+      alert('Erro ao criar usuário');
+      // Recarregar a página para exibir a mensagem de erro
+      window.location.reload();
+    }
+  })
+  .catch(error => {
+    console.error('Error during registration:', error);
+    alert('Erro ao criar usuário');
+    // Recarregar a página para exibir a mensagem de erro
+    window.location.reload();
+  });
 }
 window.onload = function() {
   var documentInput = document.getElementById('document');
