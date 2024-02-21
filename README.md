@@ -25,7 +25,7 @@ The main objective of the project is to create an authentication system with log
 
 - Injeção de Dependências e Inversão de controle
 
--Arquitetura Hexagonal e DDD(Domain-Driver Design) 
+- Arquitetura Hexagonal e DDD(Domain-Driver Design) 
 
 ![image](https://github.com/ErickMiyagi/Auth-System/assets/90419609/ed0fbf09-87f6-4d41-b426-1b47047eb5ef)
 
