@@ -21,9 +21,5 @@ function submitForm(){
       } else {
         alert('Login failed. Please check your credentials and try again.');
       }
-    })
-    .catch(error => {
-      console.error('Error during login:', error);
-      alert('Error during login. Please try again later.');
     });
   }
