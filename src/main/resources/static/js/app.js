@@ -1,4 +1,5 @@
 function submitForm() {
+  
   const fullNameInput = document.getElementById('fullName').value;
   const emailInput = document.getElementById('email').value;
   const documentInput = document.getElementById('document').value;
@@ -26,6 +27,7 @@ function submitForm() {
     },
     body: JSON.stringify(data)
   })
+  
   .then(response => {
     if (response.status === 201) {
       alert('Usuário cadastrado');

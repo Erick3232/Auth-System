@@ -10,7 +10,7 @@
   <div class="container">
     <div class="title">Registration</div>
     <div class="content">
-      <form action="#">
+      <form id="registerForm" onsubmit="submitForm(); return false;">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="button">
-          <input type="submit" value="Register" onclick="submitForm()">
+          <input type="submit" value="Register">
         </div>
         <a class="buttonLogin" href="/auth/login">Login</a>
       </form>
