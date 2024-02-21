@@ -1,8 +1,13 @@
-function Login(){
-    const login = document.getElementById('login')
-    const loginPasword = document.getElementById('loginPassword')
+function submitForm(){
+    const login = document.getElementById('login').value;
+    const password = document.getElementById('loginPassword').value;
   
-    fetch('/auth/process-Login', {
+    const data = {
+      login: login,
+      password: password
+    };
+  
+    fetch('/auth/processLogin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -10,13 +15,15 @@ function Login(){
       body: JSON.stringify(data)
     })
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Login failed');
+      if (response.ok) {
+        alert('Login successful');
+        window.location.href = '/dashboard'; // Redirecionar para a página de dashboard após o login bem-sucedido
+      } else {
+        alert('Login failed. Please check your credentials and try again.');
       }
-      return response.json();
     })
-    .then(data => {
-      alert('Login successful');
-      window.location.href = '/wallet';
-    })
+    .catch(error => {
+      console.error('Error during login:', error);
+      alert('Error during login. Please try again later.');
+    });
   }

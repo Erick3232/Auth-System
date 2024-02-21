@@ -10,7 +10,11 @@ function submitForm() {
     alert('Password and Confirm Password do not match');
     return;
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 207c9c521cce9422964b24487f37c62a2773195b
   const data = {
     login: fullNameInput,
     email: emailInput,
@@ -22,9 +26,11 @@ function submitForm() {
   fetch('/auth/process', {
     method: 'POST',
     headers: {
+      'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(data)
+<<<<<<< HEAD
   }).then(response => {
     if (response.ok) {
       window.location.href = '/auth/login';
@@ -32,6 +38,24 @@ function submitForm() {
   }).catch(error => {
     console.log(emailInput);
     alert('Registration failed');
+=======
+  })
+  .then(response => {
+    if (response.status === 201) {
+      alert('Usuário cadastrado');
+      window.location.href = '/auth/login';
+    } else {
+      alert('Erro ao criar usuário');
+      // Recarregar a página para exibir a mensagem de erro
+      window.location.reload();
+    }
+  })
+  .catch(error => {
+    console.error('Error during registration:', error);
+    alert('Erro ao criar usuário');
+    // Recarregar a página para exibir a mensagem de erro
+    window.location.reload();
+>>>>>>> 207c9c521cce9422964b24487f37c62a2773195b
   });
 }
 window.onload = function() {
