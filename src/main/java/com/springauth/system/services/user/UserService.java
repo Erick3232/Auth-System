@@ -22,9 +22,9 @@ public class UserService {
         return this.userRepository.findAll();
     }
 
-    public User findById(Long id){
-        Optional<User> obj = userRepository.findById(id);
-        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
+    public User findById(String userId){
+        Optional<User> obj = userRepository.findById(userId);
+        return obj.orElseThrow(() -> new ResourceNotFoundException(userId));
     }
 
     public User findByDocument(String document){
@@ -48,12 +48,12 @@ public class UserService {
         userRepository.save(user);
     }
     
-    public void delete(Long id){
+    public void delete(String id){
         findById(id);
         userRepository.deleteById(id);
     }
 
-    public User updateData(UpdateRequestService updateRequestService,Long id){
+    public User updateData(UpdateRequestService updateRequestService,String id){
         User newUser = findById(id);
         newUser.setEmail(updateRequestService.getEmail());
         newUser.setPassword(updateRequestService.getPassword());

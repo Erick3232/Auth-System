@@ -1,12 +1,17 @@
 package com.springauth.system.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Repository;
 
 import com.springauth.system.entities.User;
 
-public interface UserRepository extends JpaRepository<User,Long>{
+@Repository
+public interface UserRepository extends MongoRepository<User,String>{
    UserDetails findByLogin(String fullname);
    User findByDocument(String document);
-   User findById(long id);
+   Optional<User> findById(String id);
+
 }

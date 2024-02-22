@@ -2,6 +2,6 @@ package com.springauth.system.DTOs;
 
 import java.math.BigDecimal;
 
-public record TransactionDTO(Long payerId, Long payeeId, BigDecimal amount) {
+public record TransactionDTO(String payerId, String payeeId, BigDecimal amount) {
     
 }

@@ -37,7 +37,7 @@ public class WalletController {
 
     @Operation(summary = "Update User Balance")
     @PutMapping("/{userId}")
-    public ResponseEntity<String> update(@PathVariable Long userId, @RequestBody BalanceDTO balance) throws Exception {
+    public ResponseEntity<String> update(@PathVariable String userId, @RequestBody BalanceDTO balance) throws Exception {
         try {
             acountService.addBalance(balance, userId);
             return ResponseEntity.ok("SALDO ADICIONADO");

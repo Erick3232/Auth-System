@@ -47,7 +47,7 @@ public class UserController {
 
     @Operation(summary = "Get User with ID")
     @GetMapping("/{userId}")
-    public ResponseEntity<User> findById(@PathVariable Long userId){ // add findById Get
+    public ResponseEntity<User> findById(@PathVariable String userId){ // add findById Get
         try{
             User newUser = userService.findById(userId);
             return new ResponseEntity<>(newUser, HttpStatus.OK);
@@ -60,7 +60,7 @@ public class UserController {
 
     @Operation(summary = "Update User operation")
     @PutMapping("/{userId}")
-    public ResponseEntity<String> update(@PathVariable Long userId, @RequestBody UpdateRequestService updateRequestService){
+    public ResponseEntity<String> update(@PathVariable String userId, @RequestBody UpdateRequestService updateRequestService){
         try {
             userService.updateData(updateRequestService,userId);
             return ResponseEntity.ok("USUÁRIO ATUALIZADO");
@@ -73,7 +73,7 @@ public class UserController {
 
     @Operation(summary = "Delete User operation")
     @DeleteMapping("/{userId}")
-    public ResponseEntity<String> delete(@PathVariable Long userId){
+    public ResponseEntity<String> delete(@PathVariable String userId){
         try{
             userService.delete(userId);
             return ResponseEntity.ok("USUÁRIO EXCLUIDO");

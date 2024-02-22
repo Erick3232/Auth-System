@@ -4,8 +4,10 @@ import com.springauth.system.entities.Transaction;
 
 import java.util.Optional;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-public interface TransactionRepository extends JpaRepository<Transaction, Long> {
-    Optional<Transaction>findById(Long id);
+@EnableMongoRepositories
+public interface TransactionRepository extends MongoRepository<Transaction, String> {
+    Optional<Transaction>findById(String id);
 }

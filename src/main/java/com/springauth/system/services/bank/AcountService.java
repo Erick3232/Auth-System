@@ -18,13 +18,12 @@ public class AcountService {
     @Autowired
     private UserRepository userRepository;
 
-
-    public User findById(Long id){
+    public User findById(String id){
         Optional<User> obj = userRepository.findById(id);
         return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
-    public User addBalance(BalanceDTO balancedDto, Long id) throws Exception{
+    public User addBalance(BalanceDTO balancedDto, String id) throws Exception{
         User receiver = findById(id);
         if(balancedDto.balance().compareTo(BigDecimal.ZERO) < 0){
             throw new RuntimeException("VALOR INVÁLIDO");

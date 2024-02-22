@@ -13,8 +13,8 @@
       <form id="registerForm" onsubmit="submitForm(); return false;">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" id="fullName" required>
+            <span class="details">Login</span>
+            <input type="text" placeholder="Enter your User" id="fullName" required>
           </div>
           <div class="personType-details" >
             <input type="radio" name="type" id="personTypeCPF" onclick="personTypeChange('CPF')">
@@ -33,7 +33,7 @@
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" id="email" required>
+            <input type="text" placeholder="Enter your Email" id="email" onblur="validateEmail()" required>
           </div>
           <div class="input-box" id="documentInputBox">
             <span class="details">Document</span>
@@ -41,11 +41,11 @@
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="password" placeholder="Enter your password" id="password" required>
+            <input type="password" placeholder="Enter your Password" id="password" required>
           </div>
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="password" placeholder="Confirm your password" id="confirmPassword" required>
+            <input type="password" placeholder="Confirm your Password" id="confirmPassword" required>
           </div>
         </div>
         <div class="button">

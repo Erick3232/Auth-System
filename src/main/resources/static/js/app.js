@@ -11,6 +11,10 @@ function submitForm() {
     alert('Password and Confirm Password do not match');
     return;
   }
+  if(!validateEmail(emailInput)){
+    alert("Insira um email válido!");
+    return false;
+  }
   const data = {
     login: fullNameInput,
     email: emailInput,
@@ -78,4 +82,8 @@ function personTypeChange(type) {
     documentInput.removeAttribute('pattern');
     documentInput.removeAttribute('maxlength');
   }
+}
+function validateEmail(inputEmail){
+  var re = /\S+@\S+\.\S+/;
+  return re.test(inputEmail);
 }
