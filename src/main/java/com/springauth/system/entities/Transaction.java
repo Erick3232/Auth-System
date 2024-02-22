@@ -3,6 +3,8 @@ package com.springauth.system.entities;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +19,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity(name = "transactions")
-@Table(name = "transactions")
+@Document(collection = "table_transactions")
 @Getter
 @Setter
 @AllArgsConstructor
