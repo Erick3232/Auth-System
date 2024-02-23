@@ -32,6 +32,12 @@ public class UserService {
         return findedUser;
     }
 
+    public String findIdByLogin(String login){
+        User findId = userRepository.findIdByLogin(login);
+        String Id = findId.getId();
+        return Id;
+    }
+
     public User createUser(UserDTO data){
         User newUser = new User(data);
         this.saveUser(newUser);

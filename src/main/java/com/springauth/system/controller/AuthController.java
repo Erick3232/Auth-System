@@ -70,6 +70,11 @@ public class AuthController {
         return ResponseEntity.ok(new LoginResponseDTO(generateToken));
     }
    
+    @GetMapping("/getId")
+    public ResponseEntity<String> getLogin(@RequestBody AuthenticationDTO data){
+        String Id = userService.findIdByLogin(data.login());
+        return new ResponseEntity<>(Id,HttpStatus.OK);
+    }
     
 }
 

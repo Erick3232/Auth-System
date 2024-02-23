@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.springauth.system.DTOs.UserDTO;
 import com.springauth.system.entities.User;
@@ -83,4 +84,14 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("USUÁRIO NÃO ENCONTRADO");
         }
     }
+
+    @GetMapping("getID")
+    public ResponseEntity<String> getIdByLogin(@RequestParam String login){
+        String id = this.userService.findIdByLogin(login);
+        return new ResponseEntity<>(login, HttpStatus.OK);
+    }
+
+
+
+
 }
