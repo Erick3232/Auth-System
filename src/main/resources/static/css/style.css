@@ -13,14 +13,16 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #a0a0a0, #404040,#171717);
+  background-color: #2e2e2e;
 }
 
 .container {
   max-width: 700px;
   width: 100%;
-  background-color: #fff;
+  background-color: #161616;
+  border: 1px solid #4b4949;
   padding: 25px 30px;
+  backdrop-filter: blur(10px);
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
@@ -29,17 +31,19 @@ body {
   font-size: 25px;
   font-weight: 500;
   position: relative;
+  color: #fff;
+  text-align: center;
 }
 
 .container .title::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50;
   bottom: 0;
   height: 3px;
-  width: 30px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #3e3e3e, #1d1d1d);
+  width: 100px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
 .content form .user-details {
@@ -58,47 +62,65 @@ form .input-box span.details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
-}
+  margin-left: 20px;
+  color: #fff;
+  }
 
 .user-details .input-box input {
   height: 45px;
   width: 100%;
   outline: none;
   font-size: 16px;
-  border-radius: 5px;
-  padding-left: 15px;
-  border: 1px solid #ccc;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.2);
+  padding-left: 35px;
+  border: 2px solid #ccc;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
+}
+::-webkit-input-placeholder{
+  color: #fff;
+}
+.input-box i{
+  position: relative;
+  top: -32px;
+  left: 12px;
 }
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
-  border-color: #9b59b6;
+  border-color: #c0c0c0;
 }
 
 form .personType-details .type-title {
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 500;
-  margin-right: 185px;
+  margin-right: 165px;
+  margin-left: 20px;
+  color: #fff;
 }
 
 form .category {
   display: flex;
   width: 80%;
-  margin: 14px 0px;
+  margin: 20px 0px;
   justify-content: space-around;
+  padding-right: 70px;
+  color: #fff;
 }
-
 form .category label {
   display: flex;
   align-items: center;
+  padding-left: 30px;
   cursor: pointer;
 }
-
+.type{
+  margin-left: 10px;
+}
 form .category label .dot {
   height: 18px;
   width: 18px;
+  margin-left: 20px;
   border-radius: 50%;
   background: #d9d9d9;
   border: 5px solid transparent;
@@ -107,7 +129,7 @@ form .category label .dot {
 
 #personTypeCPF:checked~.category label .one,
 #personTypeCNPJ:checked~.category label .two {
-  background: #9b59b6;
+  background: #030303;
   border-color: #d9d9d9;
 }
 
@@ -128,23 +150,27 @@ form .button {
 form .button input {
   height: 100%;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 35px;
   border: none;
-  color: #fff;
+  color: black;
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background: linear-gradient(145deg, #202020, #808080);
+  transition: all 0.3s ease-in-out;
+  background: rgba(255,255,255,0.7);
 }
 .buttonLogin{
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
+}
+.buttonLogin a{
+  color: #fff;
 }
 form .button input:hover {
-  background: linear-gradient(-145deg, #808080, #202020);
+  background: rgba(255,255,255,1);
 }
 
 @media(max-width: 584px) {

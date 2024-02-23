@@ -13,7 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #a0a0a0, #404040, #171717);
+  background-color: #2e2e2e;
 }
 
 #title-login{
@@ -22,7 +22,7 @@ body {
 .container {
   max-width: 700px;
   width: 40%;
-  background-color: #fff;
+  background-color: #161616;
   padding: 25px 20px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
@@ -33,13 +33,14 @@ body {
   font-weight: 500;
   position: relative;
   text-align: center;
+  color: #fff;
 }
 .container .title::before {
     content: "";
     position: absolute;
     bottom: 0;
     height: 3px;
-    width: 30px;
+    width: 70px;
     text-align: center;
     align-items: center;
     border-radius: 5px;
@@ -61,19 +62,29 @@ body {
     display: flex;
     font-weight: 500;
     margin-bottom: 10px;
+    color: #fff;
+    margin-left: 20px;
   }
   .user-details .input-box input {
     height: 45px;
-    width: 150%;
+    width: 30vw;
     outline: none;
     font-size: 16px;
-    border-radius: 5px;
-    padding-left: 10px;
-    border: 1px solid #ccc;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.2);
+    padding-left: 35px;
+    border: 2px solid #ccc;
     border-bottom-width: 2px;
     transition: all 0.3s ease;
   }
-  
+  .input-box i{
+    position: relative;
+    top: -32px;
+    left: 13px;
+  }
+  ::-webkit-input-placeholder{
+    color: #fff;
+  }
   .user-details .input-box input:focus,
   .user-details .input-box input:valid {
     border-color: #9b59b6;
@@ -97,23 +108,25 @@ body {
   form .button input {
     height: 100%;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 35px;
     border: none;
-    color: #fff;
+    color: black;
     font-size: 18px;
     font-weight: 500;
-    justify-content: center;
-    display: flex;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    transition: all 0.3s ease-in-out;
+    background: rgba(255,255,255,0.7);
   }
   .buttonLogin{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
+  }
+  .buttonLogin a{
+    color: #fff;
   }
   form .button input:hover {
-    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    background: rgba(255,255,255,1);
   }

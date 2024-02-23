@@ -31,31 +31,31 @@ public class WalletController {
     @GetMapping("/dashboard")
     public ModelAndView dashboard(){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("dashboard");
+        mv.setViewName("/menu/dashboard");
         return mv;
     }
     @GetMapping("/dashboard/cards")
     public ModelAndView cards(){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("cards");
+        mv.setViewName("/menu/cards");
         return mv;
     }
     @GetMapping("/dashboard/services")
     public ModelAndView services(){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("services");
+        mv.setViewName("/menu/services");
         return mv;
     }
     @GetMapping("/dashboard/support")
     public ModelAndView support(){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("support");
+        mv.setViewName("/menu/support");
         return mv;
     }
     @GetMapping("/dashboard/account")
     public ModelAndView account(){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("account");
+        mv.setViewName("/menu/account");
         return mv;
     }
 
