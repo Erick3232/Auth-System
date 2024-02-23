@@ -55,7 +55,7 @@ a {
   content: '';
   position: absolute;
   top: 50%;
-  right: -90px;
+  right: -120px;
   transform: translateY(-50%);
   height: 190vh;
   width: 1px;
@@ -73,7 +73,7 @@ a {
   height: 100%;
   margin: 0;
   background-color: var(--c-gray-800);
-  padding: 2vw 4vw 6vw;
+  padding: 0.2vw 3vw;
   display: flex;
   flex-direction: column;
 }
