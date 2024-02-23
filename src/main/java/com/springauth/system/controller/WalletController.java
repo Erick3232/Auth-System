@@ -29,9 +29,33 @@ public class WalletController {
     private AcountService acountService;
 
     @GetMapping("/dashboard")
-    public ModelAndView index(){
+    public ModelAndView dashboard(){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("dashboard");
+        return mv;
+    }
+    @GetMapping("/dashboard/cards")
+    public ModelAndView cards(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("cards");
+        return mv;
+    }
+    @GetMapping("/dashboard/services")
+    public ModelAndView services(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("services");
+        return mv;
+    }
+    @GetMapping("/dashboard/support")
+    public ModelAndView support(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("support");
+        return mv;
+    }
+    @GetMapping("/dashboard/account")
+    public ModelAndView account(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("account");
         return mv;
     }
 
