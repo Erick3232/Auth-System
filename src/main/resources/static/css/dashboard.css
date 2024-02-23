@@ -47,7 +47,20 @@ textarea {
 a {
   color: inherit;
 }
-
+.withLine {
+  display: inline-block;
+  position: relative;
+}
+.withLine::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -90px;
+  transform: translateY(-50%);
+  height: 190vh;
+  width: 1px;
+  background-color: #2e2e2e;
+}
 .responsive-wrapper {
   width: 90%;
   max-width: 1600px;
@@ -231,7 +244,7 @@ a {
 
 .tabs {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   color: var(--c-text-tertiary);
   border-bottom: 1px solid var(--c-gray-600);
 }

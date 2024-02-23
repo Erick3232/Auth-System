@@ -52,6 +52,12 @@ public class WalletController {
         mv.setViewName("support");
         return mv;
     }
+    @GetMapping("/dashboard/account")
+    public ModelAndView account(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("account");
+        return mv;
+    }
 
     @Operation(summary = "Update User Balance")
     @PutMapping("/{userId}")
