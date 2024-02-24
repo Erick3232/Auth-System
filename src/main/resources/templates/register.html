@@ -2,19 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title> Registration </title>
+    <title>Auth Bank - Register</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/style.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
   <div class="container">
-    <div class="title">Registration</div>
+    <div class="title">Sign Up</div>
     <div class="content">
       <form id="registerForm" onsubmit="submitForm(); return false;">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Login</span>
-            <input type="text" placeholder="Enter your User" id="fullName" required>
+            <input type="text" placeholder="Username" id="fullName" required>
+            <i class="bx bx-user"></i>
           </div>
           <div class="personType-details" >
             <input type="radio" name="type" id="personTypeCPF" onclick="personTypeChange('CPF')">
@@ -33,25 +35,31 @@
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Enter your Email" id="email" onblur="validateEmail()" required>
+            <input type="text" placeholder="Email" id="email" onblur="validateEmail()" required>
+            <i class="bx bx-envelope"></i>
           </div>
           <div class="input-box" id="documentInputBox">
             <span class="details">Document</span>
-            <input type="text" placeholder="Enter your Document" id="document" required>
+            <input type="text" placeholder="Document" id="document" required>
+            <i class="bx bxs-user-rectangle"></i>
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="password" placeholder="Enter your Password" id="password" required>
+            <input type="password" placeholder="Password" id="password" required>
+            <i class="bx bx-lock-alt"></i>
           </div>
           <div class="input-box">
             <span class="details">Confirm Password</span>
             <input type="password" placeholder="Confirm your Password" id="confirmPassword" required>
+            <i class="bx bx-lock-alt"></i>
           </div>
         </div>
         <div class="button">
           <input type="submit" value="Register">
         </div>
-        <a class="buttonLogin" href="/auth/login">Login</a>
+        <div class="buttonLogin">
+          <span>Have an Account? <a href="/auth/login"> Login</a></span>
+        </div>
       </form>
       <script src="/js/app.js"></script>
     </div>
