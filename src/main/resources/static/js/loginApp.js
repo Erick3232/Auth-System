@@ -34,4 +34,12 @@ function submitForm() {
         alert('Login failed. Please check your credentials and try again.');
       }
     });
+<<<<<<< HEAD
 }
+=======
+  }
+  function login(){
+    localStorage.setItem('isLogged', 'true');
+    window.location.href = '/wallet/dashboard'
+  }
+>>>>>>> 695bcd3e6ed49c7daea9a01b35d5bc018db2956f

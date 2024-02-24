@@ -1,3 +1,4 @@
+
 function submitForm(){
     const login = document.getElementById('login').value;
     const password = document.getElementById('loginPassword').value;
@@ -41,3 +42,8 @@ function submitForm(){
         });
     });
 }
+
+if(!localStorage.getItem('isLogged')){
+    window.location.href = '/auth/login';
+}
+

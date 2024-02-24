@@ -55,7 +55,7 @@ a {
   content: '';
   position: absolute;
   top: 50%;
-  right: -120px;
+  right: -80px;
   transform: translateY(-50%);
   height: 190vh;
   width: 1px;
@@ -161,6 +161,7 @@ a {
 
 .footer {
   margin-top: auto;
+  margin-bottom: 40px;
 }
 .footer h1 {
   font-size: 1.5rem;
@@ -297,7 +298,10 @@ a {
   margin-bottom: 35px;
   flex-shrink: 0;
 }
-
+.filter-options span{
+  margin-right: 270px;
+  color: var(--c-text-tertiary);
+}
 .icon-button {
   width: 32px;
   height: 32px;
@@ -399,7 +403,6 @@ a {
   right: 0;
   bottom: 0;
 }
-
 .tile-header {
   display: flex;
   align-items: center;
@@ -412,6 +415,7 @@ a {
   flex-direction: column;
   line-height: 1.375;
   margin-left: 0.5rem;
+  font-size: 25px;
 }
 .tile-header h3 span:first-child {
   font-weight: 600;
