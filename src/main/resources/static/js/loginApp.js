@@ -23,3 +23,7 @@ function submitForm(){
       }
     });
   }
+  function login(){
+    localStorage.setItem('isLogged', 'true');
+    window.location.href = '/wallet/dashboard'
+  }
