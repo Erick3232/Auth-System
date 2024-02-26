@@ -85,13 +85,4 @@ public class UserController {
         }
     }
 
-    @GetMapping("getID")
-    public ResponseEntity<String> getIdByLogin(@RequestParam String login){
-        String id = this.userService.findIdByLogin(login);
-        return new ResponseEntity<>(login, HttpStatus.OK);
-    }
-
-
-
-
 }

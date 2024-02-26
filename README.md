@@ -90,7 +90,7 @@ The main objective of the project is to create an authentication system with log
 
 ## Documentação
 
-Todas as referências do nosso projeto foram retiradas da documentação do [Spring Framework](https://glysns.gitbook.io/spring-framework/) e do [Swagger](https://www.bezkoder.com/spring-boot-swagger-3/)
+All references about this project they were removed [Spring Framework](https://glysns.gitbook.io/spring-framework/) and [Swagger](https://www.bezkoder.com/spring-boot-swagger-3/)
 
 # Colaborators
 

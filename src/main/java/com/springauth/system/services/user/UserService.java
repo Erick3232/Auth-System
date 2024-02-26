@@ -32,10 +32,9 @@ public class UserService {
         return findedUser;
     }
 
-    public String findIdByLogin(String login){
-        User findId = userRepository.findIdByLogin(login);
-        String Id = findId.getId();
-        return Id;
+    public User findIdByLogin(String login){
+        User user = userRepository.findIdByLogin(login);
+        return user;
     }
 
     public User createUser(UserDTO data){
