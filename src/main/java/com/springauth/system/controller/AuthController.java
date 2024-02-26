@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,10 +73,10 @@ public class AuthController {
         return ResponseEntity.ok(new LoginResponseDTO(generateToken));
     }
    
-    @GetMapping("/getId")
-    public ResponseEntity<String> getLogin(@RequestBody AuthenticationDTO data){
-        String Id = userService.findIdByLogin(data.login());
-        return new ResponseEntity<>(Id,HttpStatus.OK);
+    @GetMapping("/getId/{login}")
+    public ResponseEntity<User> getLogin(@PathVariable String login){
+        User newUser = userService.findIdByLogin(login);
+        return new ResponseEntity<>(newUser,HttpStatus.OK);
     }
 }
 
