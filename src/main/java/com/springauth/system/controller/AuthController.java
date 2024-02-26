@@ -23,10 +23,12 @@ import com.springauth.system.services.user.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
+
 @Tag(name = "Register and Login", description = "API for Register and Login controllers")
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+
     @Autowired
     private UserService userService;
 
@@ -75,7 +77,6 @@ public class AuthController {
         String Id = userService.findIdByLogin(data.login());
         return new ResponseEntity<>(Id,HttpStatus.OK);
     }
-    
 }
 
 

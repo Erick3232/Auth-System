@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Auth Bank - Cards</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="/css/dashboard.css">
 </head>
@@ -67,7 +68,40 @@
                         </div>
                     </footer>
                 </div>
-        </div>
+                <form action="" onsubmit="addCard()">
+                    <div class="app-body-main-content">
+                        <section class="service-section">
+                            <div class="user-details-card">Card Information</div>
+                            <div class="input-box">
+                                <span class="details">Número do cartão</span>
+                                <input type="text" id="numberCard" maxlength="19" onclick="numberTypeCard(this)" required>
+                                <i class="bx bx-credit-card"></i>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Nome do Titular</span>
+                                <input type="text" id="titleCard" oninput="toUpperCase(this)" required>
+                                <i class="bx bxs-id-card"></i>
+                            </div>
+                            <div class="input-box-v">
+                                <div class="expiration">
+                                    <span class="details">Vencimento</span>
+                                    <input type="text" id="validateCard" oninput="formatCardNumber(this)" maxlength="5" placeholder="MM/AA" required>
+                                    <i class="bx bx-id-card"></i>
+                                </div>
+                                <div class="cvv">
+                                    <span class="details">CVV</span>
+                                    <i class="bx bxs-credit-card-front"></i>
+                                    <input maxlength="3" type="text" id="cvvCard" placeholder="CVV" required>
+                                </div>
+                            </div>
+                            <div class="buttonSave">
+                                <button type="submit">Add</button>
+                            </div>
+                        </section>
+            </div>
+                </form>
+                
         <script src='https://unpkg.com/phosphor-icons'></script><script  src="./script.js"></script>
-</body>
+        <script src="/js/cards.js"></script>
+    </body>
 </html>

@@ -1,13 +1,19 @@
 
 function submitForm(){
     const login = document.getElementById('login').value;
+    const loginName = document.getElementById('loginName').value;
     const password = document.getElementById('loginPassword').value;
   
     const data = {
       login: login,
-      password: password
+      password: password,
+      loginName: "erick"
     };
-  
+    
+    const getName = document.getElementById('login-name');
+    getName.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("loginName").value = data.loginName;
+    })
     fetch('/auth/processLogin', {
       method: 'POST',
       headers: {
@@ -17,13 +23,12 @@ function submitForm(){
     })
     .then(response => {
       if (response.ok) {
-        return response.json(); // Processar a resposta JSON
+        return response.json();
       } else {
         
       }
     })
     .then(data => {
-        // Chamar a segunda requisição para obter o ID
          fetch('/auth/gerId', {
             method: 'GET',
             headers: {
@@ -34,16 +39,10 @@ function submitForm(){
             if (!response.ok) {
                 throw new Error('Erro ao obter ID');
             }
-            return response.text(); // Retorna o ID como texto
+            return response.text(); 
         })
         .then(id => {
-            // Redirecionar para a página de dashboard com o ID anexado à URL
             window.location.href = '/wallet/dashboard#' + id;
         });
     });
 }
-
-if(!localStorage.getItem('isLogged')){
-    window.location.href = '/auth/login';
-}
-

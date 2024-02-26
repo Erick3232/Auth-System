@@ -347,7 +347,7 @@ a {
 .tile {
   padding: 1rem;
   border-radius: 8px;
-  background-color: var(--c-olive-500);
+  background-color: #9a85ec;
   color: var(--c-gray-900);
   min-height: 200px;
   display: flex;
@@ -369,7 +369,7 @@ a {
   box-shadow: 0 0 0 2px var(--c-gray-800), 0 0 0 4px var(--c-green-500);
 }
 .tile:nth-child(3) {
-  background-color: var(--c-gray-300);
+  background-color: #f08765;
 }
 .tile:nth-child(3):focus-within {
   box-shadow: 0 0 0 2px var(--c-gray-800), 0 0 0 4px var(--c-gray-300);
@@ -791,37 +791,6 @@ a {
   margin-top: 1.5rem;
 }
 
-.save-button {
-  border: 1px solid currentColor;
-  color: var(--c-text-tertiary);
-  border-radius: 6px;
-  padding: 0.75em 2.5em;
-  background-color: transparent;
-  transition: 0.25s ease;
-  cursor: pointer;
-}
-.save-button:focus, .save-button:hover {
-  color: var(--c-white);
-}
-
-.settings-button {
-  display: flex;
-  align-items: center;
-  color: var(--c-text-tertiary);
-  background-color: transparent;
-  border: 0;
-  padding: 0;
-  margin-left: 1.5rem;
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-.settings-button i {
-  margin-right: 0.5rem;
-}
-.settings-button:focus, .settings-button:hover {
-  color: var(--c-white);
-}
-
 input:focus,
 select:focus,
 a:focus,
@@ -829,4 +798,109 @@ textarea:focus,
 button:focus {
   outline: 0;
   box-shadow: 0 0 0 2px var(--c-gray-800), 0 0 0 4px var(--c-gray-300);
+}
+.user-details-card{
+  font-size: 30px;
+  color: var(--c-text-tertiary);
+  margin-bottom: 60px;
+}
+.input-box input{
+  height: 45px;
+  width: 50%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.2);
+  padding-left: 35px;
+  border: 2px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.input-box span{
+  margin-left: 20px;
+}
+.input-box-v {
+  display: flex;
+  margin-left: 0;
+}
+
+.input-box-v .expiration,
+.input-box-v .cvv {
+  flex-grow: 1; 
+  margin-right: -250px; 
+  padding-right: 100px;
+}
+
+.input-box-v .cvv {
+  width: calc(50% - 5px); 
+  margin-right: 100px;
+  padding-right: 100px;
+  align-self: flex-start; 
+}
+
+.input-box-v input {
+  height: 45px;
+  width: 50%; 
+  outline: none;
+  font-size: 16px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  padding-left: 35px;
+  border: 2px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  color: #fff;
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+
+
+.input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  color: #fff;
+  }
+.input-box i{
+  position: relative;
+  right: 350px;
+}
+.input-box-v .expiration i{
+  position: relative;
+  right: 155px;
+}
+.input-box-v .cvv i{
+  position: relative;
+  left: 35px;
+}
+  .input-box-v span.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    color: #fff;
+    }
+.buttonSave button{
+  height: 5vh;
+  margin-top: 30px;
+  margin-left: 130px;
+  width: 15%;
+  border-radius: 35px;
+  border: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: rgba(255,255,255,0.7);
+}
+.buttonSave button:hover{
+  background: rgba(255,255,255,1)
+}
+::-webkit-input-placeholder{
+  color: #fff;
 }
