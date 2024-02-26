@@ -68,40 +68,44 @@
                         </div>
                     </footer>
                 </div>
-                <form action="" onsubmit="addCard()">
+                <form action="" onsubmit="event.preventDefault(); addCard(); return false">
                     <div class="app-body-main-content">
                         <section class="service-section">
                             <div class="user-details-card">Card Information</div>
+
                             <div class="input-box">
                                 <span class="details">Número do cartão</span>
-                                <input type="text" id="numberCard" maxlength="19" onclick="numberTypeCard(this)" required>
+                                <input type="text" id="number" maxlength="19" oninput="numberTypeCard(this)" required>
                                 <i class="bx bx-credit-card"></i>
                             </div>
+
                             <div class="input-box">
                                 <span class="details">Nome do Titular</span>
-                                <input type="text" id="titleCard" oninput="toUpperCase(this)" required>
+                                <input type="text" id="title" oninput="toUpperCase(this)" required>
                                 <i class="bx bxs-id-card"></i>
                             </div>
+
                             <div class="input-box-v">
+
                                 <div class="expiration">
                                     <span class="details">Vencimento</span>
-                                    <input type="text" id="validateCard" oninput="formatCardNumber(this)" maxlength="5" placeholder="MM/AA" required>
+                                    <input type="text" id="date" oninput="formatCardNumber(this)" maxlength="5" placeholder="MM/AA" required>
                                     <i class="bx bx-id-card"></i>
                                 </div>
+
                                 <div class="cvv">
                                     <span class="details">CVV</span>
+                                    <input maxlength="3" type="text" id="cvv" placeholder="CVV" required>
                                     <i class="bx bxs-credit-card-front"></i>
-                                    <input maxlength="3" type="text" id="cvvCard" placeholder="CVV" required>
                                 </div>
+
                             </div>
                             <div class="buttonSave">
                                 <button type="submit">Add</button>
                             </div>
                         </section>
-            </div>
+                     </div>
                 </form>
-                
-        <script src='https://unpkg.com/phosphor-icons'></script><script  src="./script.js"></script>
         <script src="/js/cards.js"></script>
     </body>
 </html>

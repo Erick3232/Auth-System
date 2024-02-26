@@ -1,16 +1,30 @@
 function addCard(){
-    const title = document.getElementById("titleCard").value;
-    const number = document.getElementById("numberCard").value;
-    const validate = document.getElementById("validateCard").value;
-    const cvv = document.getElementById("cvvCard").value;
+    const titleInput = document.getElementById('title').value;
+    const numberInput = document.getElementById('number').value;
+    const validateInput = document.getElementById("date").value;
+    const cvvInput = document.getElementById("cvv").value;
 
     const data = {
-        title: title,
-        number: number,
-        validate: validate,
-        cvv: cvv
-    }
-
+        title: titleInput,
+        number: numberInput,
+        date: validateInput,
+        cvv: cvvInput
+    };
+    fetch('/cards/processCard', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(response => {
+        if(response.status === 201){
+            alert('Card registered!');
+            window.location.reload();
+        } else {
+            alert('Failed on register your card!');
+        }
+    });
 }
 function toUpperCase(input){
     input.value = input.value.toUpperCase();
@@ -29,7 +43,7 @@ function numberTypeCard(value){
     var formattedValue = numericValue.replace(/(\d{4}(?=\d))/g, '$1 ');
     return formattedValue;
 }
-document.getElementById('numberCard').addEventListener('input',function(event){
+document.getElementById('number').addEventListener('input',function(event){
     var value = event.target.value;
     var valueFormat = numberTypeCard(value);
     event.target.value = valueFormat;

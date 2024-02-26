@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.springauth.system.DTOs.CardDTO;
+import com.springauth.system.DTOs.CardRegisterDTO;
 
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -31,6 +32,13 @@ public class Card implements Serializable{
     public Card(CardDTO data) {
         this.title = data.title();
         this.numberCard = data.numberCard();
+        this.date = data.date();
+        this.cvv = data.cvv();
+    }
+
+    public Card(CardRegisterDTO data) {
+        this.title = data.title();
+        this.numberCard = data.number();
         this.date = data.date();
         this.cvv = data.cvv();
     }
