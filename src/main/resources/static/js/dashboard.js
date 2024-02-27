@@ -1,48 +1,39 @@
+function getUserDetailsFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id');
 
-function submitForm(){
-    const login = document.getElementById('login').value;
-    const loginName = document.getElementById('loginName').value;
-    const password = document.getElementById('loginPassword').value;
-  
-    const data = {
-      login: login,
-      password: password,
-      loginName: "erick"
-    };
-    
-    const getName = document.getElementById('login-name');
-    getName.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("loginName").value = data.loginName;
-    })
-    fetch('/auth/processLogin', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        
-      }
-    })
-    .then(data => {
-         fetch('/auth/gerId', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao obter ID');
-            }
-            return response.text(); 
-        })
-        .then(id => {
-            window.location.href = '/wallet/dashboard#' + id;
-        });
-    });
+  if (id) {
+    getUserDetails(id);
+  } else {
+    console.error('ID não encontrado na URL');
+  }
 }
+
+function getUserDetails(id) {
+  fetch('/auth/getUserDetails/' + id, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  })
+  .then(response => {
+    if(response.ok){
+      return response.json();
+    } else {
+      alert('Erro ao obter detalhes do usuário');
+    }
+  })
+  .then(jsonObject => {
+    const name = jsonObject.login;
+    const balance = jsonObject.balance;
+    alert(name);
+    alert(balance);
+    
+    // Atualize os elementos na sua página HTML com os dados obtidos
+    document.getElementById('loginName').textContent = name;
+    document.getElementById('user-balance').textContent = balance;
+  });
+}
+
+// Chama a função para obter os detalhes do usuário da URL
+getUserDetailsFromURL();
