@@ -78,6 +78,12 @@ public class AuthController {
         User newUser = userService.findIdByLogin(login);
         return new ResponseEntity<>(newUser,HttpStatus.OK);
     }
+
+    @GetMapping("/getUserDetails/{id}")
+    public ResponseEntity<User> getUserDetails(@PathVariable String id) {
+        User newUser = userService.findById(id);
+        return new ResponseEntity<>(newUser,HttpStatus.OK);
+    }
 }
 
 

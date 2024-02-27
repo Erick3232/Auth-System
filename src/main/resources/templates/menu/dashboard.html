@@ -8,6 +8,19 @@
   <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
+<script>
+function getUserDetailsFromURL() {
+	const urlParams = new URLSearchParams(window.location.search);
+	const id = urlParams.get('id');
+
+	if (id) {
+	  getUserDetails(id);
+	} else {
+	  console.error('ID não encontrado na URL');
+	}
+  }
+  getUserDetailsFromURL();
+  </script>
 <div class="app">
 	<header class="app-header">
 		<div class="app-header-logo">
@@ -87,7 +100,7 @@
 		</div>
 		<div class="app-body-main-content">
 			<section class="service-section">
-				<h2>Balance: $0,00</h2>
+				<span class="withLine" id="userBalance">$</span>
 				<div class="tiles">
 					<article class="tile">
 						<div class="tile-header">
@@ -184,6 +197,5 @@
 <script src="/js/cards.js"></script>
 <!-- partial -->
   <script src='https://unpkg.com/phosphor-icons'></script>
-
 </body>
 </html>
