@@ -546,6 +546,40 @@ a {
 .payment + * {
   margin-top: 1rem;
 }
+.withLineBefore {
+  display: inline-block;
+  position: relative;
+}
+.withLineBefore::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 130px;
+  transform: translateY(-50%);
+  height: 190vh;
+  width: 1px;
+  background-color: #2e2e2e;
+}
+.nameGrid{
+  display: flex;
+  margin-bottom: 20px;
+}
+.grid i{
+  position: relative;
+  left: 150px;
+  bottom: 10px;
+}
+#gridContainer{
+  width: 200px; 
+  height: 100px; 
+  background-color: #8A05BE; 
+  margin-right: 25px; 
+  margin-top: 30px;
+  border: 1px solid transparent; 
+  padding: 20px; 
+  display: none; 
+  border-radius: 10px;
+}
 
 .card {
   width: 125px;
@@ -710,6 +744,10 @@ a {
 
 .payment-section > h2 {
   font-size: 1.5rem;
+  margin-bottom: px;
+}
+.payment-section h2{
+  margin-top: 0px;
 }
 
 .payment-section-header {
@@ -839,7 +877,6 @@ button:focus {
   padding-right: 100px;
   align-self: flex-start; 
 }
-
 .input-box-v input {
   height: 45px;
   width: 50%; 
@@ -874,7 +911,7 @@ button:focus {
 }
 .input-box-v .cvv i{
   position: relative;
-  left: 35px;
+  right: 160px;
 }
   .input-box-v span.details {
     display: block;
