@@ -17,7 +17,6 @@ function submitForm() {
   .then(response => {
     if (response.ok) {
       alert('Login successful');
-      // Após o login bem-sucedido, chame a função getId para obter o ID do usuário e redirecionar para a página de dashboard
       getId(data.login);
     } else {
       alert('Login failed. Please check your credentials and try again.');
@@ -26,7 +25,7 @@ function submitForm() {
 }
 
 function getId(login) {
-  fetch('/auth/getId/' + login, {
+  fetch('/auth/getId/' + login,{
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
@@ -41,9 +40,7 @@ function getId(login) {
     })
   .then(jsonObject => {
     const id = jsonObject.id;
-    alert(id);
-    console.log(id);
-    // Redirecionar o usuário para a página de dashboard com o ID como parâmetro na URL
+    sessionStorage.setItem("token", id);
     window.location.href = '/wallet/dashboard?id=' + encodeURIComponent(id);
   });
 }
