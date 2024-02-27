@@ -26,6 +26,10 @@ function addCard(){
         }
     });
 }
+function addCards(){
+    document.getElementById("gridContainer").style.display = "block";
+}
+    
 function toUpperCase(input){
     input.value = input.value.toUpperCase();
 }
