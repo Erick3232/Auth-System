@@ -35,6 +35,8 @@ The main objective of the project is to create an authentication system with log
 
 ![image](user.png)
 
+![image](uml.png)
+
 
 
 
