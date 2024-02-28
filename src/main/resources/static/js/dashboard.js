@@ -25,16 +25,15 @@ function getUserDetails(id) {
   })
   .then(jsonObject => {
     const name = jsonObject.login;
-    const balance = jsonObject.balance;
+    const balance = parseFloat(jsonObject.balance).toFixed(2);
     alert(name);
     alert(balance);
     
     // Atualize os elementos na sua página HTML com os dados obtidos
     document.getElementById('loginName').textContent = name;
-    document.getElementById('user-balance').textContent = balance;
+    document.getElementById('userBalance').textContent = '$ ' + balance;
   });
 }
 
 // Chama a função para obter os detalhes do usuário da URL
 getUserDetailsFromURL();
-
