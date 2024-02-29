@@ -10,7 +10,7 @@ The main objective of the project is to create an authentication system with log
 ## 🛠 Skills
 - 🛢️ Banco de Dados: MongoDB, H2 DataBase, SQL
 
-- ☕ Language: Java | HTML | CSS | JavScript 
+- ☕ Language: Java | HTML | CSS | JavaScript 
 
 - 🛠 Framework: Spring Boot 3 | Spring Data | Spring Security 6
 
