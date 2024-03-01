@@ -16,6 +16,8 @@ The main objective of the project is to create an authentication system with log
 
 - 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
 
+- 📚 Libraries: ReactJS | Axios
+
 
 ## Roadmap
 
