@@ -6,17 +6,18 @@
 
 This project is an API built using **Java, Java Spring,H2 as database and Spring Security and JWT for authentication control** where the focus main is the Security.
 
-The main objective of the project is to create an authentication system with login, registration, password recovery and account management. 
+The main objective of the project is to create an authentication with bank system where the login, registration, password recovery, account management, add cards for transfers and deposit is the main funcionality. 
 ## 🛠 Skills
-- 🛢️ Banco de Dados: MongoDB, H2 DataBase, SQL
+- ☕ Language: Java | HTML | CSS | JavaScript
 
-- ☕ Language: Java | HTML | CSS | JavaScript 
+- 📚 Libraries: ReactJS | Axios
 
 - 🛠 Framework: Spring Boot 3 | Spring Data | Spring Security 6
 
+- 🛢️ Banco de Dados: MongoDB, H2 DataBase, SQL
+  
 - 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
 
-- 📚 Libraries: ReactJS | Axios
 
 
 ## Roadmap
