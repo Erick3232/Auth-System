@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springauth.system.DTOs.CardDTO;
-import com.springauth.system.DTOs.CardRegisterDTO;
 import com.springauth.system.entities.Card;
 import com.springauth.system.repositories.CardRepository;
 
@@ -20,11 +19,6 @@ public class CardService {
         return this.cardRepository.findAll();
     }
     public Card createCard(CardDTO data){
-        Card newCard = new Card(data);
-        this.saveCard(newCard);
-        return newCard;
-    }
-    public Card registerCard(CardRegisterDTO data){
         Card newCard = new Card(data);
         this.saveCard(newCard);
         return newCard;

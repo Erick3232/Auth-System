@@ -1,6 +1,8 @@
 function getUserDetailsFromURL() {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
+  const idTest = sessionStorage.getItem("token");
+  alert(idTest);
 
   if (id) {
     getUserDetails(id);

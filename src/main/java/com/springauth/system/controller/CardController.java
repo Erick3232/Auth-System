@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springauth.system.DTOs.CardDTO;
-import com.springauth.system.DTOs.CardRegisterDTO;
 import com.springauth.system.entities.Card;
 import com.springauth.system.services.card.CardService;
 
@@ -36,11 +35,6 @@ public class CardController {
     public ResponseEntity<List<Card>> getAllCards(){
         List<Card> cards = this.cardService.getAllCards();
         return new ResponseEntity<>(cards, HttpStatus.OK);
-    }
-    @PostMapping("/processCard")
-    public ResponseEntity<Card> registerCard(@RequestBody CardRegisterDTO data) throws ParseException{
-        Card newCard = this.cardService.registerCard(data);
-        return new ResponseEntity<>(newCard, HttpStatus.CREATED);
     }
 
 }
