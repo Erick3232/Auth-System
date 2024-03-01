@@ -14,7 +14,7 @@ The main objective of the project is to create an authentication with bank syste
 
 - 🛠 Framework: Spring Boot 3 | Spring Data | Spring Security 6
 
-- 🛢️ Banco de Dados: MongoDB, H2 DataBase, SQL
+- 🛢️ DataBases: MongoDB, H2 DataBase, SQL
   
 - 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
 
