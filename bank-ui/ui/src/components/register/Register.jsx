@@ -34,10 +34,6 @@ const Register = () => {
                   <input type='password' placeholder='Confirm Password' required />
                   <RiLockPasswordFill className='icon-confirm-password' />
               </div>
-              <div className="forgot-password">
-                  <a href="#">Forgot Password?</a>
-              </div>
-
               <button type='submit'>Create new Account</button>
 
               <div className="register">
