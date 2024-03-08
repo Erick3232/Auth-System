@@ -6,7 +6,33 @@ import { FaRegAddressCard } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { BrowserRouter as Router, Route,Routes, Link } from 'react-router-dom';
+import axios from 'axios';
 
+// Dados para enviar no corpo da solicitação
+const data = {
+  login: 'seu_login',
+  password: 'sua_senha',
+  document: 'seu_documento',
+  role: 'seu_papel',
+  email: 'seu_email'
+};
+
+// URL do endpoint
+// Realizar a solicitação POST usando Axios
+axios.post('http://localhost:8080/auth/process', {
+    login : 'user',
+    email : 'user@gmail.com',
+    password : '123',
+    document : '123.456.789-01',
+    role : 'CPF'
+})
+.then(function (response){
+    console.log(response);
+})
+.catch(function (error){
+    console.log(error);
+});
+  
 
 const Register = () => {
     return (
