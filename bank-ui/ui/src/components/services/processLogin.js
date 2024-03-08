@@ -7,7 +7,7 @@ const api = axios.create({
 
 export const createUser = async (userData) => {
   try {
-    const response = await api.post('/auth/process', userData);
+    const response = await api.post('/auth/processLogin', userData);
     return response.data;
   } catch (error) {
     throw error;
