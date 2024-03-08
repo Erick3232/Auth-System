@@ -20,17 +20,14 @@ const data = {
 // URL do endpoint
 // Realizar a solicitação POST usando Axios
 axios.post('http://localhost:8080/auth/process', {
-    login : 'user',
-    email : 'user@gmail.com',
+    login : 'user2',
+    email : 'user2@gmail.com',
     password : '123',
-    document : '123.456.789-01',
+    document : '124.456.789-01',
     role : 'CPF'
 })
 .then(function (response){
     console.log(response);
-})
-.catch(function (error){
-    console.log(error);
 });
   
 
