@@ -41,26 +41,26 @@ const Register = () => {
               <h1>Sign Up</h1>
 
               <div className="input-box">
-                  <input type='text' placeholder='Username' required />
+                  <input type='text' placeholder='Username' id='username'  required />
                   <FaUser className='icon' />
-                  <input type='text' placeholder='RG' required />
+                  <input type='text' placeholder='RG' id='rg'  required />
                   <FaRegAddressCard className='icon-rg' />
               </div>
 
               <div className="input-box">
-                  <input type='text' placeholder='Email' required />
+                  <input type='text' placeholder='Email' id='email' required />
                   <MdEmail className='icon' />
-                  <input type='text' placeholder='CPF/CNPJ' required />
+                  <input type='text' placeholder='CPF/CNPJ' id='document'  required />
                   <FaUserCircle className='icon-document' />
               </div>
 
               <div className="input-box">
-                  <input type='password' placeholder='Password' required />
+                  <input type='password' placeholder='Password' id='password' required />
                   <FaLock className='icon' />
-                  <input type='password' placeholder='Confirm Password' required />
+                  <input type='password' placeholder='Confirm Password' id='confirmPassword' required />
                   <RiLockPasswordFill className='icon-confirm-password' />
               </div>
-              <button type='submit'>Create new Account</button>
+              <button type='submit'>Create new Account</button> 
 
               <div className="register">
                   <span>Have an account? <Link to="/login">Login</Link></span>
