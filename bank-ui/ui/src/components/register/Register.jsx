@@ -1,4 +1,4 @@
-import React,{useRef} from 'react'
+import React,{useState} from 'react'
 import Login from '../login/Login'
 import './Register.css'
 import { FaUser, FaLock, FaUserCircle } from "react-icons/fa";
@@ -32,29 +32,38 @@ axios.post('http://localhost:8080/auth/process', {
   
 
 const Register = () => {
+
+    const {user, setUsers} =  useState({ 
+        name: '', 
+        email:'', 
+        password:'',
+        confirmPassword:'', 
+        document: '',
+        rg:''});
+        
     return (
       <div className="container">
           <form action=''>
               <h1>Sign Up</h1>
 
               <div className="input-box">
-                  <input type='text' placeholder='Username' id='username'  required />
+                  <input type='text' placeholder='Username' value={user.name}  required />
                   <FaUser className='icon' />
-                  <input type='text' placeholder='RG' id='rg'  required />
+                  <input type='text' placeholder='RG' id='rg' value={user.rg}  required />
                   <FaRegAddressCard className='icon-rg' />
               </div>
 
               <div className="input-box">
-                  <input type='text' placeholder='Email' id='email' required />
+                  <input type='text' placeholder='Email' id='email' value={user.email}  required />
                   <MdEmail className='icon' />
-                  <input type='text' placeholder='CPF/CNPJ' id='document'  required />
+                  <input type='text' placeholder='CPF/CNPJ' id='document' value={user.document} required />
                   <FaUserCircle className='icon-document' />
               </div>
 
               <div className="input-box">
-                  <input type='password' placeholder='Password' id='password' required />
+                  <input type='password' placeholder='Password' id='password' value={user.password} required />
                   <FaLock className='icon' />
-                  <input type='password' placeholder='Confirm Password' id='confirmPassword' required />
+                  <input type='password' placeholder='Confirm Password' value={user.confirmPassword}  id='confirmPassword' required />
                   <RiLockPasswordFill className='icon-confirm-password' />
               </div>
               <button type='submit'>Create new Account</button> 
