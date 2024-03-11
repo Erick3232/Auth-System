@@ -37,6 +37,7 @@ public class User implements UserDetails {
     private String email;
     private String password;
     private String document;
+    private String RG;
     private UserRole role;
     private BigDecimal balance;
     
@@ -53,6 +54,7 @@ public class User implements UserDetails {
         this.login = data.login();
         this.password = encodedPassword;
         this.role = data.role();
+        this.RG = data.RG();
         this.document = data.document();
         this.email = data.email();
         this.balance = BigDecimal.ZERO;

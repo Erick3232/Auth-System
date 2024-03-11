@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.springauth.system.DTOs.AuthenticationDTO;
 import com.springauth.system.DTOs.LoginResponseDTO;
 import com.springauth.system.DTOs.RegisterDTO;
