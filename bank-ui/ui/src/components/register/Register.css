@@ -13,14 +13,15 @@
   .container{
     background-color: #161616;
     color: #fff;
-    width: 50vw;
-    height: 80vh;
-    border-radius: 20px ;
+    width: 720px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
   }
   .container h1{
     text-align: center;
     font-size: 36px;
-    padding: 20px 20px 0 20px;
+    
   }
   .container .input-box{
     position: relative;
@@ -32,44 +33,45 @@
     display: flex;
   }
   .input-box input{
-    width: 45%;
+    width: 50%;
     height: 100%;
+    display: inline-block;
     background-color: transparent;
     border: none;
-    margin: 20px 20px 20px 20px;
+    margin: 10px 10px 5px 20px;
     color: #fff;
     outline: none;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 40px;
-    padding: 20px 45px 20px 40px;
+    padding: 15px;
   }
   .input-box input::placeholder{
     color: #fff;
   }
   .input-box .icon{
     position: absolute;
-    right: 650px;
-    bottom: -17px;
+    right: 56%;
+    bottom: -5px;
   }
   .input-box .icon-document{
     position: absolute;
-    right: 330px;
-    bottom: -18px;
+    right: 15%;
+    bottom: -5px;
   }
   .input-box .icon-confirm-password{
     position: absolute;
-    right: 330px;
-    bottom: -18px;
+    right: 15%;
+    bottom: -5px;
   }
   .input-box .icon-rg{
     position: absolute;
-    right: 330px;
-    bottom: -17px;
+    right: 15%;
+    bottom: -5px;
   }
   .container button{
     width: 60%;
-    margin-top: 60px;
-    margin-left: 150px;
+    margin-top: 6%;
+    margin-left: 22%;
     height: 45px;
     background-color: #cac2c2;
     border: none;
