@@ -40,6 +40,7 @@ public class User implements UserDetails {
     private String RG;
     private UserRole role;
     private BigDecimal balance;
+    private String rg;
     
 
     public User(UserDTO data) {
@@ -58,6 +59,7 @@ public class User implements UserDetails {
         this.document = data.document();
         this.email = data.email();
         this.balance = BigDecimal.ZERO;
+        this.rg = data.rg();
     }
 
     @Override
