@@ -18,6 +18,9 @@ const Register = () => {
         rg: ''
     });
 
+    const [submitted, setSubmitted] = useState(false);
+    const [valid, setValid] = useState(false);
+
     const handleInputChange = (event) => {
         event.preventDefault();
         const { name, value } = event.target;
@@ -40,18 +43,29 @@ const Register = () => {
                 document: document,
                 role: 'CPF' // Define o papel aqui ou altera a lógica conforme necessário
             })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.error('Erro ao enviar dados:', error);
-            });
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.error('Erro ao enviar dados:', error);
+                });
+                setValid(true);
         }
+        setSubmitted(true);
     };
 
     return (
         <div className="container">
             <form onSubmit={handleSubmit}>
+                {submitted && valid && (
+                    <div className="success-message">
+                        <h3>
+                            {" "}
+                            Welcome {Login} {" "}
+                        </h3>
+                        <div> Your registration was successful! </div>
+                    </div>
+                )}
                 <h1>Sign Up</h1>
 
                 <div className="input-box">
