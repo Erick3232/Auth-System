@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Login from './components/login/Login';
-import Register from './components/register/Register'
+import Login from './pages/login/Login';
+import Register from './pages/register/Register'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

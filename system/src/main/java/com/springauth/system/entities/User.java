@@ -48,6 +48,7 @@ public class User implements UserDetails {
         this.id = data.id();
         this.password = data.password();
         this.role = data.role();
+        this.rg = data.rg();
     }
 
     public User(RegisterDTO data, String encodedPassword){

@@ -31,6 +31,9 @@ const Register = () => {
         return () => clearTimeout(timer);
     }, [mensagem]);
 
+    const [submitted, setSubmitted] = useState(false);
+    const [valid, setValid] = useState(false);
+
     const handleInputChange = (event) => {
         event.preventDefault();
         const { name, value } = event.target;
@@ -53,6 +56,7 @@ const Register = () => {
         } 
 
         if (login && email && password && confirmPassword && document && rg) {
+
             try{
                 const response = await axios.post('http://localhost:8080/auth/process', {
                     login: login,
@@ -68,13 +72,24 @@ const Register = () => {
             } catch(error) {
                 console.error('Erro ao enviar dados:', error);
             }
+
         }
+        setSubmitted(true);
     };
 
     return (
         <div>
         <div className="container">
             <form onSubmit={handleSubmit}>
+                {submitted && valid && (
+                    <div className="success-message">
+                        <h3>
+                            {" "}
+                            Welcome {Login} {" "}
+                        </h3>
+                        <div> Your registration was successful! </div>
+                    </div>
+                )}
                 <h1>Sign Up</h1>
 
                 <div className="input-box">
