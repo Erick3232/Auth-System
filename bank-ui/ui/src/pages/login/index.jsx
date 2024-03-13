@@ -35,7 +35,7 @@ const Login = () => {
                 });
                 console.log(response)
                 setMensagens('Entrada bem-sucedida!')
-                history('/dashboard');
+                history('/transaction');
             }catch(error){
                 setMensagens("Usuário ou Senha inválida")
                 console.error("Erro: ", error)

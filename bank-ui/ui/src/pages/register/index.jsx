@@ -68,7 +68,7 @@ const Register = () => {
                 });
                 console.log(response);
                 setMensagens('Conta criada com sucesso!');
-                history('/login');
+                history('/');
             } catch(error) {
                 console.error('Erro ao enviar dados:', error);
             }
@@ -114,7 +114,7 @@ const Register = () => {
                 </div>
                 <button type='submit'>Create new Account</button>
                 <div className="register">
-                    <span>Have an account? <Link to="/login">Login</Link></span>
+                    <span>Have an account? <Link to="/">Login</Link></span>
                 </div>
             </form>
         </div>
