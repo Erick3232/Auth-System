@@ -13,8 +13,8 @@ const Home = () => {
       </p>
       <ul style={{ listStyle: "none", padding: "0" }}>
         <li style={{ marginBottom: "10px" }}>
-          <Link to="/" style={{ color: "#87CEFA", textDecoration: "none" }}>
-            MainDashboard
+          <Link to="/transaction" style={{ color: "#87CEFA", textDecoration: "none" }}>
+            Transaction
           </Link>
         </li>
       </ul>

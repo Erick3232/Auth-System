@@ -42,8 +42,8 @@ input {
 input:focus {
   outline: none;
 }
-.alice-carousel__dots-item {
-  cursor: pointer;
+table {
+  table-layout: fixed;
 }
 .ps-menu-icon {
   width: unset !important;

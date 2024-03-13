@@ -8,7 +8,7 @@ export default function Header({ ...props }) {
   return (
     <header {...props}>
       <div className="flex flex-row md:flex-col justify-between items-center w-full mx-auto md:gap-10 md:px-5 max-w-[1110px]">
-        <Heading size="xl" as="h3" className="!text-gray-900">
+        <Heading size="s" as="h3" className="!text-gray-900">
           Transactions
         </Heading>
         <div className="flex flex-row sm:flex-col justify-between items-center w-auto sm:gap-10">

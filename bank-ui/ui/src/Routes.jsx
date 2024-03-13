@@ -1,16 +1,17 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
-import Home from "pages/Home";
-import NotFound from "pages/NotFound";
-import MainDashboard from "pages/MainDashboard";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import Transaction from "./pages/Transaction";
+import Login from "./pages/Login";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
-    { path: "dhiwise-dashboard", element: <Home /> },
+    { path: "login", element: <Login/> },
     { path: "*", element: <NotFound /> },
     {
-      path: "/",
-      element: <MainDashboard />,
+      path: "transaction",
+      element: <Transaction />,
     },
   ]);
 

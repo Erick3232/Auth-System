@@ -7,15 +7,15 @@ const sizes = {
   "2xl": "text-lg font-medium",
   "3xl": "text-xl font-normal",
   "4xl": "text-[22px] font-normal",
-  xl: "text-base font-medium",
-  md: "text-sm font-normal",
+  xl: "text-base font-normal",
+  md: "text-sm font-medium",
 };
 
-const Text = ({ children, className = "", as, size = "s", ...restProps }) => {
+const Text = ({ children, className = "", as, size = "xl", ...restProps }) => {
   const Component = as || "p";
 
   return (
-    <Component className={`text-blue_gray-400 font-inter ${className} ${sizes[size]}`} {...restProps}>
+    <Component className={`text-blue_gray-900 font-inter ${className} ${sizes[size]}`} {...restProps}>
       {children}
     </Component>
   );
