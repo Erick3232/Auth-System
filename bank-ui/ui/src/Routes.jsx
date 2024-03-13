@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Transaction from "./pages/Transaction";
 import Login from "./pages/Login";
-
+import Register from "./pages/Register";
 const ProjectRoutes = () => {
   let element = useRoutes([
     { path: "/", element: <Login/> },
@@ -12,6 +12,10 @@ const ProjectRoutes = () => {
     {
       path: "transaction",
       element: <Transaction />,
+    },
+    {
+      path: "register",
+      element: <Register/>
     },
   ]);
 

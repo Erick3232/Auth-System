@@ -2,7 +2,7 @@ import React,{useRef, useState} from 'react';
 import './Login.css';
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import Register from '../register/Register'; 
+import Register from "../Register";
 import { BrowserRouter as Router, Route,Routes, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 

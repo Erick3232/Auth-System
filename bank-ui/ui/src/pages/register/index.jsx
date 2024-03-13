@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Register.css';
-import Login from '../Login'
+import Login from "../Login";
 import { FaUser, FaLock, FaUserCircle } from "react-icons/fa";
 import { FaRegAddressCard } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
