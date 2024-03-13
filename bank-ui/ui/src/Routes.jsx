@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 
 const ProjectRoutes = () => {
   let element = useRoutes([
-    { path: "login", element: <Login/> },
+    { path: "/", element: <Login/> },
     { path: "*", element: <NotFound /> },
     {
       path: "transaction",
