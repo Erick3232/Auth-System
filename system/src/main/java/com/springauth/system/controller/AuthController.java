@@ -43,7 +43,7 @@ public class AuthController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/process")
     public ResponseEntity<User> createUser(@RequestBody RegisterDTO data) {
-        if(userService.findByDocument(data.document()) == null){
+        if(userService.findByDocument(data.document(), data.rg(), data.email()) == true){
         String encoded = new BCryptPasswordEncoder().encode(data.password());
         User newUser = userService.registerUser(data, encoded);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);

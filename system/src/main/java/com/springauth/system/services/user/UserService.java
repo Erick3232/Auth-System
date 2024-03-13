@@ -27,9 +27,12 @@ public class UserService {
         return obj.orElseThrow(() -> new ResourceNotFoundException(userId));
     }
 
-    public User findByDocument(String document){
-        User findedUser = userRepository.findByDocument(document);
-        return findedUser;
+    public boolean findByDocument(String document, String rg, String email){
+        User findedUser = userRepository.findByDocument(document,rg,email);
+        if(findedUser == null){
+        return true;
+        } else
+        return false;
     }
 
     public User findIdByLogin(String login){
