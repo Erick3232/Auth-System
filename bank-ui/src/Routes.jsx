@@ -1,11 +1,16 @@
-import Transaction from "./pages/Transaction";
-import Login from "./pages/login";
-import Register from "./pages/register"
+import { Route, BrowserRouter, Routes, Navigate } from "react-router-dom";
+import Login from "./pages/login/index";
+import Register from "./pages/register/index"
 
 const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "/", element: <Login/> },
-    { path: "register", element: <Register/>},
-  ]);
-  return element
-}
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route element = { <Login/> }  path="/login" exact />
+        <Route element = { <Register/> }  path="/register" />
+        <Route path="/" element={<Navigate to="/login" />} />
+      </Routes> 
+     </BrowserRouter>
+  )
+} 
+export default ProjectRoutes
