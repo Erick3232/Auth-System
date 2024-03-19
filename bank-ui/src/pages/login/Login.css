@@ -4,20 +4,19 @@
     box-sizing: border-box;
   }
   
-  body {
-    display: flex;
+  .login-body {
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     background-color: #2e2e2e;
   }
   
   .wrapper {
       background-color: #161616;
+      margin-left: 32%;
       color: #fff;
       width: 35vw;
       height: 60vh;
-      margin-bottom: 100px;
-      margin-left: 15%;
       border-radius: 10px;
   }
   
@@ -92,9 +91,8 @@
     font-weight: 700;
   }
   .img{
-    width: 20%;
-    margin-left: 38%;
-    height: 10%;
+    width: 12%;
+    margin-left: 44%;
   }
 
   .wrapper button:hover {

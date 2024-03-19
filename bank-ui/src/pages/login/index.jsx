@@ -44,7 +44,7 @@ const Login = () => {
         }
     }
   return (
-    <div>
+    <div className='login-body'>
         <img src={logo} alt="" className='img' />
     <div className="wrapper">
         <form onSubmit={handleSubmit}>
@@ -71,7 +71,7 @@ const Login = () => {
                 <Route path="/register" component={Register} />
             </Routes>
         </form>
-    </div>
+        </div>
     </div>
   );
 };

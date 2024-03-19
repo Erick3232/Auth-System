@@ -79,7 +79,7 @@ const Register = () => {
     };
 
     return (
-        <div>
+        <div className='register-body'>
             <img src={logo} alt="" className='logo'/>
         <div className="container">
             <form onSubmit={handleSubmit}>
