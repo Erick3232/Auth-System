@@ -8,17 +8,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 200vh;
     background-color: #2e2e2e;
   }
   
   .wrapper {
       background-color: #161616;
       color: #fff;
-      width: 40vw;
+      width: 35vw;
       height: 60vh;
-      margin: auto;
-      padding: 10px;
+      margin-bottom: 100px;
+      margin-left: 15%;
       border-radius: 10px;
   }
   
@@ -92,7 +91,12 @@
     color: #000000;
     font-weight: 700;
   }
-  
+  .img{
+    width: 20%;
+    margin-left: 38%;
+    height: 10%;
+  }
+
   .wrapper button:hover {
     background-color: #fff;
     transition: 0.3s ease-in;

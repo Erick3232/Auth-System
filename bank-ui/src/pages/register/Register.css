@@ -45,6 +45,11 @@
     border-radius: 40px;
     padding: 15px;
   }
+  .logo{
+    width: 20%;
+    margin-left: 40%;
+    height: 10%;
+  }
   .input-box input::placeholder{
     color: #fff;
   }
@@ -94,9 +99,7 @@
     transition: "opacity 0.5s ease-in-out";
     justify-content: center;
     font-family: "Roboto", sans-serif;
-    background-color: #161616;
     color: white;
-    border: 2px solid rgb(255, 255, 255);
   }
   .container button:hover{
     background-color: #fff;

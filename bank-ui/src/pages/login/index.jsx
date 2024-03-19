@@ -3,6 +3,7 @@ import './Login.css';
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Register from "../register";
+import logo from './logo.png'
 import { BrowserRouter as Router, Route,Routes, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -44,7 +45,7 @@ const Login = () => {
     }
   return (
     <div>
-        <h2>Auth Bank°</h2>
+        <img src={logo} alt="" className='img' />
     <div className="wrapper">
         <form onSubmit={handleSubmit}>
             <h1>Login</h1>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Register.css';
 import Login from "../login";
+import logo from '../login/logo.png'
 import { FaUser, FaLock, FaUserCircle } from "react-icons/fa";
 import { FaRegAddressCard } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
@@ -68,7 +69,7 @@ const Register = () => {
                 });
                 console.log(response);
                 setMensagens('Conta criada com sucesso!');
-                history('/');
+                history('/login');
             } catch(error) {
                 console.error('Erro ao enviar dados:', error);
             }
@@ -79,6 +80,7 @@ const Register = () => {
 
     return (
         <div>
+            <img src={logo} alt="" className='logo'/>
         <div className="container">
             <form onSubmit={handleSubmit}>
                 {submitted && valid && (
