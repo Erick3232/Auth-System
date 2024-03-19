@@ -43,6 +43,8 @@ const Login = () => {
         }
     }
   return (
+    <div>
+        <h2>Auth Bank°</h2>
     <div className="wrapper">
         <form onSubmit={handleSubmit}>
             <h1>Login</h1>
@@ -68,6 +70,7 @@ const Login = () => {
                 <Route path="/register" component={Register} />
             </Routes>
         </form>
+    </div>
     </div>
   );
 };
