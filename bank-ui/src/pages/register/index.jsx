@@ -70,7 +70,10 @@ const Register = () => {
                 });
                 setBackgroundColor("#94bb68")
                 setMensagens('Conta criada com sucesso!');
-                history('/login');
+                setTimeout(() => {
+                    setMensagens('');
+                    history('/login'); 
+                }, 2000);
             } catch(error) {
                 console.error('Erro ao enviar dados:', error);
             }
