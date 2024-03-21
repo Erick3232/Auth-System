@@ -4,14 +4,16 @@
     box-sizing: border-box;
   }
   .register-body{
-   height: 80px;
+    height: 80px;
     min-height: 100vh;
-    background-color: #2e2e2e;
+    background-image: url("../../assets/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
   .container{
     background-color: #161616;
     color: #fff;
-    width: 720px;
+    width: 45vw;
     margin: auto;
     padding: 10px;
     border-radius: 10px;
@@ -41,7 +43,7 @@
     outline: none;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 40px;
-    padding: 15px;
+    padding: 20px 20px 20px 20px;
   }
   .logo{
     width: 12%;
@@ -54,22 +56,22 @@
   .input-box .icon{
     position: absolute;
     right: 56%;
-    bottom: -5px;
+    bottom: -7px;
   }
   .input-box .icon-document{
     position: absolute;
     right: 15%;
-    bottom: -5px;
+    bottom: -7px;
   }
   .input-box .icon-confirm-password{
     position: absolute;
     right: 15%;
-    bottom: -5px;
+    bottom: -7px;
   }
   .input-box .icon-rg{
     position: absolute;
     right: 15%;
-    bottom: -5px;
+    bottom: -7px;
   }
   .container button{
     width: 60%;

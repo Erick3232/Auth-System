@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Register.css';
 import Login from "../login";
-import logo from '../login/logo.png'
+import logo from '../../assets/logo.png'
 import { FaUser, FaLock, FaUserCircle } from "react-icons/fa";
 import { FaRegAddressCard } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
@@ -19,6 +19,7 @@ const Register = () => {
         document: '',
         rg: ''
     });
+    const [backgroundColor, setBackgroundColor] = useState('')
     const[mensagem, setMensagens] = useState('');
     const history = useNavigate();
 
@@ -67,7 +68,7 @@ const Register = () => {
                     role: 'CPF',
                     rg: rg
                 });
-                console.log(response);
+                setBackgroundColor("#94bb68")
                 setMensagens('Conta criada com sucesso!');
                 history('/login');
             } catch(error) {
@@ -120,7 +121,7 @@ const Register = () => {
                 </div>
             </form>
         </div>
-        <div className='alertMessage'>
+        <div className='alertMessage' style={{ backgroundColor: backgroundColor }}>
         {mensagem && <p>{mensagem}</p>}
         </div>
         </div>

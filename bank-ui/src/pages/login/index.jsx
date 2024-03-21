@@ -3,7 +3,7 @@ import './Login.css';
 import { FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import Register from "../register";
-import logo from './logo.png'
+import logo from '../../assets/logo.png'
 import { BrowserRouter as Router, Route,Routes, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -11,10 +11,11 @@ const Login = () => {
 
     const [values, setValues] = useState({
         login: '',
-        password: ''
+        password: '',
     })
+    const [backgroundColor, setBackgroundColor] = useState('')
     const history = useNavigate();
-    const[mensagem, setMensagens] = useState('')
+    const[mensagem, setMensagem] = useState('')
 
     const handleInputChange = (event) => {
         event.preventDefault();
@@ -34,11 +35,21 @@ const Login = () => {
                     login: login,
                     password: password
                 });
-                console.log(response)
-                setMensagens('Entrada bem-sucedida!')
-                history('/menu');
+                setBackgroundColor("#117f09")
+                setMensagem("Entrada com sucesso!")
+
+                setTimeout(() => {
+                    setMensagem('');
+                    history('/menu'); 
+                }, 2000);
             }catch(error){
-                setMensagens("Usuário ou Senha inválida")
+                setBackgroundColor("#aa0401")
+                setMensagem("Usuário ou senha incorreta!")
+
+                setTimeout(() => {
+                    setMensagem('');
+                    setBackgroundColor('')
+                }, 5000);
                 console.error("Erro: ", error)
             }
         }
@@ -71,6 +82,9 @@ const Login = () => {
                 <Route path="/register" component={Register} />
             </Routes>
         </form>
+        </div>
+        <div className='message' style={{ backgroundColor: backgroundColor }}>
+        <p className={setMensagem ? 'show' : 'hide'}>{mensagem}</p>
         </div>
     </div>
   );
