@@ -24,7 +24,7 @@ The main objective of the project is to create an authentication with bank syste
 
 - Login and Register Page with SPA(Single Page Application), using React and Axios 
 
-![image](uml.png)
+![image](Diagram.png)
 
 
 - Desenvolvimento de APIs robustas e eficientes
