@@ -1,10 +1,8 @@
-import './Menu.css'
+import '../menu/Menu.css'
 import { Header } from "../../components/Header"
-import { Services } from "../../components/Services"
 import { Navigation } from '../../components/Navigation'
-import { Cards } from "../../components/Cards"
 
-const Menu = () => {
+const cards = () => {
     return(
         <div className="app">
             <Header/>
@@ -19,10 +17,8 @@ const Menu = () => {
                         </div>
                     </footer>
                 </div>
-                <Services/>
-                <Cards/>
             </div>
         </div>
     )
 }
-export default Menu
+export default cards

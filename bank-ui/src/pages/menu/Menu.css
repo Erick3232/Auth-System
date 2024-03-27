@@ -317,3 +317,34 @@
     margin-left: auto;
     margin-right: 0.75rem;
   }
+  .payment-section  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-left: 25%;
+  }
+  .payment-section{
+    margin-bottom: 20%;
+  }
+  .app-body-siderbar{
+    margin-bottom: 20%;
+    padding-top: 10%;
+    margin-left: 30%;
+  }
+  .payment-section-header {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 25%;
+  }
+  .payment-section-header p {
+    color: var(--c-text-tertiary);
+    font-size: 0.875rem;
+  }
+  .payment-section-header div {
+    padding-left: 1rem;
+    margin-left: auto;
+    align-items: center;
+  }
+  .payment-section-header div > * + * {
+    margin-left: 0.5rem;
+  }
