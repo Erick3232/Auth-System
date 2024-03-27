@@ -1,12 +1,16 @@
-import { Text } from 'react-native'
-import React from 'react'
-import { Container } from './styled'
+import React from 'react';
+import { Container, UserPhotoContainer, UserPhotoImage, Logo } from './styled'; // Correção aqui
+import { MaterialCommunityIcons } from "@expo/vector-icons"; // Correção de nome aqui
+
 const Header = () => {
   return (
     <Container>
-      <Text>Header</Text>
+      <Logo source={require("../../../../assets/logo.png")} />
+      <UserPhotoContainer>
+        <UserPhotoImage source={require("../../../../assets/userPhoto.png")} />
+      </UserPhotoContainer>
     </Container>
-  )
-}
+  );
+};
 
 export default Header;
