@@ -19,35 +19,16 @@ The main objective of the project is to create an authentication with bank syste
 - 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
 
 
-
 ## Roadmap
 
-- Login and Register Page with SPA(Single Page Application), using React and Axios 
+- Login and Register Page with React, where he is the SPA(Single Page Application)  
 
 ![image](Diagram.png)
 
 
-- Desenvolvimento de APIs robustas e eficientes
-
-- Adicionar integrações com APIs
-
-- Injeção de Dependências e Inversão de controle
-
-- Arquitetura Hexagonal e DDD(Domain-Driver Design) 
+- This UML exemplifies the classes and their functions in each
 
 ![image](https://github.com/ErickMiyagi/Auth-System/assets/90419609/ed0fbf09-87f6-4d41-b426-1b47047eb5ef)
-
-
-- Desenvolvimento da class User e suas ferramentas na produção
-
-
-![image](user.png)
-
-
-
-
-
-
 
 
 ## Documentação da API
