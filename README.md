@@ -8,19 +8,24 @@ This project is an API built using **Java, Java Spring,H2 as database and Spring
 
 The main objective of the project is to create an authentication with bank system where the login, registration, password recovery, account management, add cards for transfers and deposit is the main funcionality. 
 ## 🛠 Skills
-- ☕ Language: Java | HTML | CSS | JavaScript
+- 🌐 Web Development: Java | HTML | CSS | JavaScript | React 
 
-- 📚 Libraries: ReactJS | Axios
+- 📱 App Development: React Native
 
 - 🛠 Framework: Spring Boot 3 | Spring Data | Spring Security 6
 
-- 🛢️ DataBases: MongoDB, H2 DataBase, SQL
+- 🛢️ DataBases: MongoDB
   
 - 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
 
 
 
 ## Roadmap
+
+- Login and Register Page with SPA(Single Page Application), using React and Axios 
+
+![image](uml.png)
+
 
 - Desenvolvimento de APIs robustas e eficientes
 
@@ -38,9 +43,6 @@ The main objective of the project is to create an authentication with bank syste
 
 ![image](user.png)
 
-- UML Login and Register Page
-
-![image](uml.png)
 
 
 
