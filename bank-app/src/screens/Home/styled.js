@@ -10,5 +10,5 @@ min-height: 250px;
 background-color: #161616;
 border-bottom-left-radius: 30px;
 border-bottom-right-radius: 30px;
-padding: 20px 0;
+padding: 50px 0;
 `;
