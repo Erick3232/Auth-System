@@ -8,44 +8,27 @@ This project is an API built using **Java, Java Spring,H2 as database and Spring
 
 The main objective of the project is to create an authentication with bank system where the login, registration, password recovery, account management, add cards for transfers and deposit is the main funcionality. 
 ## 🛠 Skills
-- ☕ Language: Java | HTML | CSS | JavaScript
+- 🌐 Web Development: Java | HTML | CSS | JavaScript | React 
 
-- 📚 Libraries: ReactJS | Axios
+- 📱 App Development: React Native
 
 - 🛠 Framework: Spring Boot 3 | Spring Data | Spring Security 6
 
-- 🛢️ DataBases: MongoDB, H2 DataBase, SQL
+- 🛢️ DataBases: MongoDB
   
 - 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
 
 
-
 ## Roadmap
 
-- Desenvolvimento de APIs robustas e eficientes
+- Login and Register Page with React, where he is the SPA(Single Page Application)  
 
-- Adicionar integrações com APIs
+![image](Diagram.png)
 
-- Injeção de Dependências e Inversão de controle
 
-- Arquitetura Hexagonal e DDD(Domain-Driver Design) 
+- This UML exemplifies the classes and their functions in each
 
 ![image](https://github.com/ErickMiyagi/Auth-System/assets/90419609/ed0fbf09-87f6-4d41-b426-1b47047eb5ef)
-
-
-- Desenvolvimento da class User e suas ferramentas na produção
-
-
-![image](user.png)
-
-- UML Login and Register Page
-
-![image](uml.png)
-
-
-
-
-
 
 
 ## Documentação da API
