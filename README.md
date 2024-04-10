@@ -8,7 +8,7 @@ This project is an API built using **Java, Java Spring,H2 as database and Spring
 
 The main objective of the project is to create an authentication with bank system where the login, registration, password recovery, account management, add cards for transfers and deposit is the main funcionality. 
 ## 🛠 Skills
-- 🌐 Web Development: Java | HTML | CSS | JavaScript | React 
+- 🌐 Web Development and Library: Java | HTML | CSS | JavaScript | React | Bootstrap | Axios 
 
 - 📱 App Development: React Native
 
