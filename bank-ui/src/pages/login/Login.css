@@ -38,31 +38,6 @@
       display: flex;
   }
   
-  .input-boxx {
-    width: 50%;
-      height: 100%;
-      display: inline-block;
-      background-color: transparent;
-      border: none;
-      margin-left: 90px;
-      color: #fff;
-      outline: none;
-      border-radius: 40px;
-  }
-  
-  .input-boxx input {
-    width: 78%;
-    margin-left: 50px;
-    height: 100%;
-    background-color: transparent;
-    border: none;
-    color: #fff;
-    outline: none;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 40px;
-    padding: 20px 30px; 
-  }
-  
   .input-boxx .icon-name,
   .input-boxx .icon-password {
     position: absolute;
@@ -111,23 +86,10 @@
     color: #fff;
     font-weight: bold;
   }
-  .message{
-    text-align: center;
-    width: 16%;
-    padding: 10px 10px 10px 10px;
-    margin-top: 3%;
-    margin-left: 42%;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    font-family: "Roboto", sans-serif;
-    color: white;
-    font-weight: bold;
-  }
-  .message p{
-    transition: opacity 1s ease-in-out;
-    opacity: 0;
-  }
-  .message p.show{
-    opacity: 1;
+  .lines{
+    width: 24%;
+    height: 3px;
+    border: 3px;
+    background-color: black;
+    margin-left: 120px;
   }

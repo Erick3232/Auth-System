@@ -51,7 +51,7 @@
     width: 100%;
     height: 100%;
     margin: 0;
-    background-color: var(--c-gray-800);
+    background-color: #26282f;
     padding: 0.2vw 3vw;
     display: flex;
     flex-direction: column;
@@ -67,25 +67,20 @@
   }
   .tabs {
     display: flex;
+    width: 100%;
     justify-content: space-around;
     color: var(--c-text-tertiary);
     border-bottom: 1px solid var(--c-gray-600);
   }
   .tabs .active {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     text-decoration: none;
-    border-top: 2px solid transparent;
-    display: inline-flex;
-    width: 10vw;
-    justify-content: center;
+    width: 11vw;
+    justify-content: space-around;
     display: flex;
     opacity: 0;
     transition: opacity 0.5s ease-in;
   }
   .tabs .active, .tabs .active:hover, .tabs .active:focus {
-    color: var(--c-text-primary);
-    border-color: var(--c-text-primary);
     opacity: 1;
     transition: opacity 0.5s ease-in;
   }
@@ -176,14 +171,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    color: #fff;
+    color: #c2bdbd;
   }
   .navigation .menu {
     display: flex;
     align-items: center;
     text-decoration: none;
     transition: 0.25s ease;
-    color: var(--c-gray-100);
+    color: #c2bdbd;
   }
   .navigation .menu * {
     transition: 0.25s ease;
@@ -198,8 +193,7 @@
   }
   .navigation .menu:hover, .navigation .menu:focus {
     transform: translateX(4px);
-    color: var(--c-text-primary);
-    text-decoration: underline;
+    color: #fff;
   }
   .footer {
     margin-top: 220px;
@@ -209,18 +203,19 @@
     font-size: 1.5rem;
     line-height: 1.125;
     display: flex;
+    color: #fff;  
     align-items: flex-start;
   }
   .footer h1 small {
     font-size: 0.5em;
     margin-left: 0.25em;
+    color: #fff;
   }
   .footer div {
     border-top: 1px solid var(--c-gray-600);
-    margin-top: 1.5rem;
     padding-top: 1rem;
     font-size: 0.75rem;
-    color: var(--c-text-tertiary);
+    color: #fff;
   }
   .tiles {
     display: grid;
@@ -229,17 +224,15 @@
          column-gap: 1rem;
     row-gap: 1rem;
     margin-top: 1.25rem;
+    width: 10vw;
   }
   .tile {
-    padding: 1rem;
     border-radius: 8px;
-    background-color: #9a85ec;
-    color: var(--c-gray-900);
     min-height: 200px;
     display: flex;
+    width: 15vw;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
     transition: 0.25s ease;
   }
   .tile:hover {
@@ -248,14 +241,8 @@
   .tile:focus-within {
     box-shadow: 0 0 0 2px var(--c-gray-800), 0 0 0 4px var(--c-olive-500);
   }
-  .tile:nth-child(2) {
-    background-color: var(--c-green-500);
-  }
   .tile:nth-child(2):focus-within {
     box-shadow: 0 0 0 2px var(--c-gray-800), 0 0 0 4px var(--c-green-500);
-  }
-  .tile:nth-child(3) {
-    background-color: #f08765;
   }
   .tile:nth-child(3):focus-within {
     box-shadow: 0 0 0 2px var(--c-gray-800), 0 0 0 4px var(--c-gray-300);
@@ -354,4 +341,10 @@
   }
   .payment-section-header div > * + * {
     margin-left: 0.5rem;
+  }
+  .your-account{
+    font-size: 18px;
+  }
+  .form-configuration{
+    color: #fff;
   }

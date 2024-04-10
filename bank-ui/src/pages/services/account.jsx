@@ -1,23 +1,22 @@
-import './Menu.css'
-import { Header } from "../../components/Header"
-import { Services } from "../../components/Services"
+import '../menu/Menu.css'
 import { Navigation } from '../../components/Navigation'
-import { Cards } from "../../components/Cards"
 import { Footer } from "../../components/Footer"
+import { Configuration } from '../../components/Configuration'
+import { HeaderAccount } from '../../components/HeaderAccount'
+import { Header } from '../../components/Header'
 
-const Menu = () => {
+const account = () => {
     return(
         <div className="app">
             <Header/>
             <div className="app-body">
                 <div className="app-body-navigation">
-                   <Navigation/>
+                    <Navigation/>
                     <Footer/>
                 </div>
-                <Services/>
-                <Cards/>
+                <Configuration/>
             </div>
         </div>
     )
 }
-export default Menu
+export default account

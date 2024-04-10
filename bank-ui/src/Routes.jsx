@@ -5,6 +5,7 @@ import Menu from "./pages/menu/index"
 import  Services  from "./pages/services/service"
 import  Supports  from "./pages/services/support"
 import  Cards  from "./pages/services/cards"
+import Account from "./pages/services/account"
 
 const ProjectRoutes = () => {
   return(
@@ -17,6 +18,7 @@ const ProjectRoutes = () => {
         <Route element = {<Services/>} path="/menu/service"></Route>
         <Route element = {<Cards/>} path="/menu/cards"></Route>
         <Route element = {<Supports/>} path="/menu/support"></Route>
+        <Route element= {<Account/>} path="/menu/account"></Route> 
       </Routes> 
      </BrowserRouter>
   )

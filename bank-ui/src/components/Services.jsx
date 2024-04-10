@@ -2,64 +2,80 @@ import "../pages/menu/Menu.css"
 import { Link } from 'react-router-dom'
 import { RiMoneyDollarBoxLine } from "react-icons/ri";
 import { TbPigMoney } from "react-icons/tb";
-import { HiArrowSmRight } from "react-icons/hi";
 import { BiTransfer } from "react-icons/bi";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Placeholder from 'react-bootstrap/Placeholder';
 
 export const Services = () => {
-    return(
+    return (
         <div className="app-body-main-content">
-        <section className="service-section">
-            <span id='userBalance'></span>
-            <div className="tiles">
-                <article className="tile">
+            <section className="service-section">
+                <span id='userBalance'></span>
+                <div className="tiles">
+                    <article className="tile">
+                        <div className="tile-header">
+                            <div className="d-flex justify-content-around">
+                                <Card style={{ width: '18rem', backgroundColor: '#5e6d77', borderRadius: '10px' }}>
+                                    <BiTransfer></BiTransfer>
+                                    <Card.Body>
+                                        <Card.Title style={{color: '#fff'}}>Transfers</Card.Title>
+                                        <Card.Text style={{color: '#fff'}}>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                        <Button variant="primary">Go to service</Button>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        </div>
+                    </article>
+                    <article className="tile">
                     <div className="tile-header">
-                        <BiTransfer></BiTransfer>
-                        <h3>
-                            <span>Transfers</span>
-                        </h3>
-                    </div>
-                    <Link to="/menu/services" className='services'>
-                        <span>Got to services</span>
-                        <HiArrowSmRight className='icon-button'></HiArrowSmRight>
-                    </Link>
-                </article>
-                <article className="tile">
+                            <div>
+                                <Card style={{backgroundColor: '#5e6d77', borderRadius: '10px'}}>
+                                    <TbPigMoney></TbPigMoney>
+                                    <Card.Body>
+                                        <Card.Title style={{color: '#fff'}}>Deposit</Card.Title>
+                                        <Card.Text style={{color: '#fff'}}>
+                                            Some quick example text to build on the card title and make up the
+                                            bulk of the card's content.
+                                        </Card.Text>
+                                        <Button variant="primary">Go to service</Button>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        </div>
+                    </article>
+                    <article className="tile">
                     <div className="tile-header">
-                        <RiMoneyDollarBoxLine></RiMoneyDollarBoxLine>
-                        <h3>
-                            <span>Deposit</span>
-                        </h3>
-                    </div>
-                    <Link to="/menu/services" className='services'>
-                        <span>Got to services</span>
-                        <HiArrowSmRight className='icon-button'></HiArrowSmRight>
-                    </Link>
-                </article>
-                <article className="tile">
-                    <div className="tile-header">
-                        <TbPigMoney></TbPigMoney>
-                        <h3>
-                            <span>Exchange</span>
-                        </h3>
-                    </div>
-                    <Link to="/menu/exchange" className='services'>
-                        <span>Got to exchanges</span>
-                        <HiArrowSmRight className='icon-button'></HiArrowSmRight>
-                    </Link>
-                </article>
-            </div>
-            <div className="service-section-footer">
-                <p>Services are paid according to the current state of the currency and tariff</p>
-            </div>
-        </section>
-        <section className="transfer-section">
-            <div className="transfer-section-header">
-                <h2>Latest transfers</h2>
-                <div className='filter-options'>
-                <span>Choose a transfer to see more details</span>
+                            <div>
+                                <Card style={{backgroundColor: '#5e6d77', borderRadius: '10px'}}>
+                                    <RiMoneyDollarBoxLine></RiMoneyDollarBoxLine>
+                                    <Card.Body>
+                                        <Card.Title style={{color: '#fff'}}>Exchange</Card.Title>
+                                        <Card.Text style={{color: '#fff'}}>
+                                            Realize a troca de dinheiro utilizando a nossa API de moeda e retire aqui mesmo!
+                                        </Card.Text>
+                                        <Button variant="primary">Go to exchange</Button>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-            </div>
-        </section>                    
-    </div>    
+                <div className="service-section-footer">
+                    <p>Services are paid according to the current state of the currency and tariff</p>
+                </div>
+            </section>
+            <section className="transfer-section">
+                <div className="transfer-section-header">
+                    <h2>Latest transfers</h2>
+                    <div className='filter-options'>
+                        <span>Choose a transfer to see more details</span>
+                    </div>
+                </div>
+            </section>
+        </div>
     )
 }

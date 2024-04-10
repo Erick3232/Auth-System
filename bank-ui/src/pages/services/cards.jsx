@@ -1,6 +1,9 @@
 import '../menu/Menu.css'
 import { Header } from "../../components/Header"
 import { Navigation } from '../../components/Navigation'
+import { Cards } from "../../components/Cards"
+import { Footer } from "../../components/Footer"
+import  FormCard  from "../../components/formCard/FormCard" 
 
 const cards = () => {
     return(
@@ -9,14 +12,10 @@ const cards = () => {
             <div className="app-body">
                 <div className="app-body-navigation">
                    <Navigation/>
-                    <footer className='footer'>
-                        <h1>Auth Bank <small>©</small></h1>
-                        <div>
-                            Leonardo & Erick © <br/>
-                            All Rights Reserved 2024
-                        </div>
-                    </footer>
+                    <Footer/>
                 </div>
+                <FormCard/>
+                <Cards/>
             </div>
         </div>
     )
