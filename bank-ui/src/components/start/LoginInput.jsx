@@ -4,30 +4,31 @@ import { BrowserRouter as Router, Route,Routes, Link, useNavigate } from 'react-
 import axios from 'axios';
 
 
-export const LoginInput = ()  => {
-  const [login, setValues] = {
-    login: login.user ,
-    password: login.password
-  };
-    const handleSubmit = async () => {
-      const url = 'http://localhost:8080/auth/processLogin';
-      try {
-        const response = await axios.post(url, login);
-        console.log("Login bem-sucedido", response.data);
+export const LoginInput = () => {
+  const [login, setLogin] = useState({
+    login: '',
+    password: ''
+  });
 
-      } catch (error) {
-        console.error("Erro: ", error);
-      }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const url = 'http://localhost:8080/auth/processLogin';
+    try {
+      const response = await axios.post(url, login);
+      console.log("Login bem-sucedido", response.data);
+    } catch (error) {
+      console.error("Erro: ", error);
     }
+  };
 
-    const handleInputChange = (event) => {
-        event.preventDefault();
-        const { name, value } = event.target;
-        setValues((prevValues) => ({
-            ...prevValues,
-            [name]: value
-        }));
-    };
+  const handleInputChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+    setLogin((prevLogin) => ({
+      ...prevLogin,
+      [name]: value
+    }));
+  };
     return(
         <>
         <div style={{

@@ -2,7 +2,6 @@ import '../menu/Menu.css'
 import { Navigation } from '../../components/Navigation'
 import { Footer } from "../../components/Footer"
 import { Configuration } from '../../components/Configuration'
-import { HeaderAccount } from '../../components/HeaderAccount'
 import { Header } from '../../components/Header'
 
 const account = () => {
