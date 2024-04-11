@@ -22,7 +22,7 @@ export const Navigation = ({login}) => {
     return (
         <nav className="navigation">
             <button className="user-profile">
-                <span>{user.login}</span>
+                <span></span>
             </button>
             <Link to="/menu/account" className='menu'>
                 <MdAccountCircle className='icons-menu'></MdAccountCircle>

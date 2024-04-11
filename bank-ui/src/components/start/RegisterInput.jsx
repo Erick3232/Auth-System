@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import axios from 'axios'
 
 export const RegisterInput = () => {
-  const url = "http://localhost:8080/auth/process"
     const [login, setValues] = useState({
         login: '',
         email: '',
@@ -27,23 +26,15 @@ export const RegisterInput = () => {
         }));
     };
 
-    const handleSubmit = async () => {
-        try{
-          const response = await axios.get(url, {
-            user: login.login,
-            email: login.email,
-            password: login.password,
-            confirmPassword: login.confirmPassword,
-            document: login.document,
-            rg: login.rg
-          })
-          if(response.data.sucess){
-            navigate('/login')
-          } else {
-            invalid("d-block")
-          }
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      const url = "http://localhost:8080/auth/process"
+      try{
+          const response = await axios.post(url, login)
+          console.log("Conta registrada!", response.data)
+          navigate("/login")
         } catch(error){
-          console.error("Ocorreu um error ao fazer login: ", error)
+          console.error("Ocorreu um error ao fazer registro: ", error)
         }
     };
     return(
@@ -63,7 +54,7 @@ export const RegisterInput = () => {
         Register
       </h3>
       <hr style={{backgroundColor: "black",border: "10px", height: "3px", width: "25%", marginLeft: "220px"}}/>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="row mb-3  justify-content-center">
           <div className="col-md-6 mx-auto">
             <div className="form-floating">
@@ -72,7 +63,7 @@ export const RegisterInput = () => {
                 className="form-control"
                 id="floatingInput"
                 placeholder="User"
-                value={login.userId}
+                value={login.login}
                 onChange={handleInputChange}
                 name="userId"
                 style={{ marginRight: "10px" }}
@@ -164,9 +155,8 @@ export const RegisterInput = () => {
         <div className="d-grid mt-4">
           <button
             className="btn btn-primary text-uppercase fw-semibold"
-            type="button"
+            type="submit"
             style={{backgroundColor: "#1f1f1f", border: "1px solid #26282f"}}
-            onClick={handleSubmit}
           >
             Sign in
           </button>

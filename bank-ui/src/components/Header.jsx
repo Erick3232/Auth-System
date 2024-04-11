@@ -7,6 +7,8 @@ import { Route, Routes } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+
 
 
 export const Header = () => {
@@ -38,6 +40,10 @@ export const Header = () => {
                     <Route path="/menu/cards" component={Card} />
                     <Route path="/register" component={Support} />
                 </Routes>
+            </div>
+            <div style={{marginLeft: "40%", marginBottom: "5%"}}>   
+            <Button variant="secondary" size="sm" style={{width: "30%", marginRight: "10px", marginLeft: "50px"}}>Sign up</Button>
+            <Button variant="outline-light" style={{width: "41%", height: "33px"}}>Log out</Button>
             </div>
         </header>
     )

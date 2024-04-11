@@ -5,6 +5,7 @@ import axios from 'axios';
 
 
 export const LoginInput = () => {
+  const history = useNavigate();
   const [login, setLogin] = useState({
     login: '',
     password: ''
@@ -16,6 +17,7 @@ export const LoginInput = () => {
     try {
       const response = await axios.post(url, login);
       console.log("Login bem-sucedido", response.data);
+      history("/menu");
     } catch (error) {
       console.error("Erro: ", error);
     }
