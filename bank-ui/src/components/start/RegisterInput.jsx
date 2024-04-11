@@ -49,20 +49,23 @@ export const RegisterInput = () => {
     return(
         <>
          <div style={{
-        width: "84vw",
-        height: "80vh",
-        overflow: "hidden",
+         width: "84vw",
+         height: "80vh",
+         overflow: "hidden",
+         display: "flex",
+         justifyContent: "center",
+         alignItems: "center"
       }}>
         <div className="col-sm-9 col-md-7 col-lg-6 col-xl-4 m-auto px-5">
-  <div className="card border-0 shadow rounded-3 my-5 bg-light"  style={{ width: "180%"}}>
-    <div className="card-body p-4 p-sm-5" style={{ width: "90%", marginRight: "20px", margin: "auto"}}>
+  <div className="card border-0 shadow rounded-3 my-5 bg-light"  style={{ width: "200%", margin: "-30px"}}>
+    <div className="card-body p-4 p-sm-5" style={{ width: "100%"}}>
       <h3 className="card-title text-center mb-3 fw-light fs-3 fw-semibold">
         Register
       </h3>
-      <hr style={{backgroundColor: "black",border: "10px", height: "3px", width: "25%", marginLeft: "165px"}}/>
+      <hr style={{backgroundColor: "black",border: "10px", height: "3px", width: "25%", marginLeft: "220px"}}/>
       <form>
-        <div className="row mb-3">
-          <div className="col-md-6">
+        <div className="row mb-3  justify-content-center">
+          <div className="col-md-6 mx-auto">
             <div className="form-floating">
               <input
                 type="text"
@@ -72,7 +75,7 @@ export const RegisterInput = () => {
                 value={login.userId}
                 onChange={handleInputChange}
                 name="userId"
-                style={{ width: "120%"}}
+                style={{ marginRight: "10px" }}
               />
               <label htmlFor="floatingInput">User</label>
             </div>
@@ -80,17 +83,46 @@ export const RegisterInput = () => {
           <div className="col-md-6">
             <div className="form-floating">
               <input
-                type="password"
+                type="text"
                 className="form-control"
-                id="floatingPassword"
-                placeholder="Password"
-                autoComplete="true"
-                value={login.password}
+                id="floatingRG"
+                placeholder="RG"
+                value={login.rg}
                 onChange={handleInputChange}
-                name="password"
-                style={{ width: "120%" }}
+                name="rg"
               />
-              <label htmlFor="floatingPassword">Password</label>
+              <label htmlFor="floatingRG">RG</label>
+            </div>
+          </div>
+        </div>
+        <div className="row mb-3">
+          <div className="col-md-6">
+            <div className="form-floating">
+              <input
+                type="text"
+                className="form-control"
+                id="floatingEmail"
+                placeholder="Email"
+                value={login.email}
+                onChange={handleInputChange}
+                name="email"
+                style={{ marginRight: "10px" }}
+              />
+              <label htmlFor="floatingEmail">Email</label>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="form-floating">
+              <input
+                type="text"
+                className="form-control"
+                id="floatingCPF"
+                placeholder="CPF"
+                value={login.document}
+                onChange={handleInputChange}
+                name="document"
+              />
+              <label htmlFor="floatingCPF">CPF</label>
             </div>
           </div>
         </div>
@@ -101,46 +133,12 @@ export const RegisterInput = () => {
                 type="password"
                 className="form-control"
                 id="floatingPassword"
-                placeholder="Confirm Password"
-                autoComplete="true"
-                value={login.password}
-                onChange={handleInputChange}
-                name="password"
-                style={{ width: "120%" }}
-              />
-              <label htmlFor="floatingPassword">Confirm Password</label>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="form-floating">
-              <input
-                type="password"
-                className="form-control"
-                id="floatingPassword"
                 placeholder="Password"
                 autoComplete="true"
                 value={login.password}
                 onChange={handleInputChange}
                 name="password"
-                style={{ width: "120%" }}
-              />
-              <label htmlFor="floatingPassword">Email</label>
-            </div>
-          </div>
-        </div>
-        <div className="row mb-3">
-          <div className="col-md-6">
-            <div className="form-floating">
-              <input
-                type="password"
-                className="form-control"
-                id="floatingPassword"
-                placeholder="Password"
-                autoComplete="true"
-                value={login.password}
-                onChange={handleInputChange}
-                name="password"
-                style={{ width: "120%" }}
+                style={{marginRight: "10px" }}
               />
               <label htmlFor="floatingPassword">Password</label>
             </div>
@@ -150,35 +148,19 @@ export const RegisterInput = () => {
               <input
                 type="password"
                 className="form-control"
-                id="floatingPassword"
-                placeholder="Password"
-                autoComplete="true"
-                value={login.password}
+                id="floatingConfirmPassword"
+                placeholder="Confrim Password"
+                value={login.confirmPassword}
                 onChange={handleInputChange}
-                name="password"
-                style={{ width: "120%" }}
+                name="confirmPassword"
               />
-              <label htmlFor="floatingPassword">Password</label>
+              <label htmlFor="floatingConfirmPassword">Confirm Password</label>
             </div>
           </div>
         </div>
         <p className={`text-danger fw-semibold ms-2 ${invalid}`}>
           Invalid ID or PIN
         </p>
-        <div className="form-check mb-3">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            value=""
-            id="rememberPasswordCheck"
-          />
-          <label
-            className="form-check-label"
-            htmlFor="rememberPasswordCheck"
-          >
-            Remember password
-          </label>
-        </div>
         <div className="d-grid mt-4">
           <button
             className="btn btn-primary text-uppercase fw-semibold"

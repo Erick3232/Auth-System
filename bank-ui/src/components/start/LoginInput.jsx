@@ -15,21 +15,21 @@ export const LoginInput = ()  => {
     })
      const [invalid, setInvalid] = useState("d-none");
 
-    const handleSubmit = async () => {
+     const handleSubmit = async () => {
       try {
-        const response = await axios.post(url, {
-            userId: login.login,
-            password: login.password
-        });
-        if (response.data.success) {
-            navigate(`/menu/${response.data.userIndex}`);
-        } else {
-            setInvalid("d-block");
-        }
-    } catch (error) {
-        console.error('Ocorreu um erro ao fazer login:', error);
-    }
-    }
+          const response = await axios.post(url, {
+              userId: login.login,
+              password: login.password
+          });
+          if (response.data.success) {
+              navigate(`menu/${response.data.userIndex}`);
+          } else {
+              setInvalid("d-block");
+          }
+      } catch (error) {
+          console.error('Ocorreu um erro ao fazer login:', error);
+      }
+  }
     const handleInputChange = (event) => {
         event.preventDefault();
         const { name, value } = event.target;
@@ -99,8 +99,7 @@ export const LoginInput = ()  => {
                   <button
                   style={{backgroundColor: "#1f1f1f", border: "1px solid #26282f"}}
                     className="btn btn-primary text-uppercase fw-semibold"
-                    type="button"
-                    onClick={handleSubmit}
+                    type="submit"
                   >
                     ENTRAR
                   </button>
