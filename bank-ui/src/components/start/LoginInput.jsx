@@ -1,35 +1,25 @@
 import '../../pages/login/Login.css';
-import React,{useRef, useState} from 'react';
+import React,{useEffect, useRef, useState} from 'react';
 import { BrowserRouter as Router, Route,Routes, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
 export const LoginInput = ()  => {
-    
-    const navigate = useNavigate();
-    const url = "http://localhost:8080/auth/processLogin"
-
-    const [login, setValues] = useState({
-        login: '',
-        password: '',
-    })
-     const [invalid, setInvalid] = useState("d-none");
-
-     const handleSubmit = async () => {
+  const [login, setValues] = {
+    login: login.user ,
+    password: login.password
+  };
+    const handleSubmit = async () => {
+      const url = 'http://localhost:8080/auth/processLogin';
       try {
-          const response = await axios.post(url, {
-              userId: login.login,
-              password: login.password
-          });
-          if (response.data.success) {
-              navigate(`menu/${response.data.userIndex}`);
-          } else {
-              setInvalid("d-block");
-          }
+        const response = await axios.post(url, login);
+        console.log("Login bem-sucedido", response.data);
+
       } catch (error) {
-          console.error('Ocorreu um erro ao fazer login:', error);
+        console.error("Erro: ", error);
       }
-  }
+    }
+
     const handleInputChange = (event) => {
         event.preventDefault();
         const { name, value } = event.target;
@@ -58,8 +48,8 @@ export const LoginInput = ()  => {
                     type="text"
                     className="form-control"
                     id="floatingInput"
-                    placeholder="Email address"
-                    value={login.login}
+                    placeholder="Login"
+                    value={login.user}
                     onChange={handleInputChange}
                     name="login"
                   />
@@ -78,9 +68,6 @@ export const LoginInput = ()  => {
                   />
                   <label htmlFor="floatingPassword">Password</label>
                 </div>
-                <p className={`text-danger fw-semibold ms-2 ${invalid}`}>
-                  Invalid ID or PIN
-                </p>
                 <div className="form-check mb-3">
                   <input
                     className="form-check-input"
@@ -114,4 +101,4 @@ export const LoginInput = ()  => {
         </div>
     </>
     )
-}
+  }
