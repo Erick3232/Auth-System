@@ -87,5 +87,6 @@ All references about this project they were removed [Spring Framework](https://g
 This project was developed by 
 <a href="https://www.linkedin.com/in/erick-miyagi-310016258/" target="blank"/>ErickMiyagi</a> and
 <a href="https://www.linkedin.com/in/leonardo-lermen-768769242/" target="blank"/>leonardolermen</a>
+<a href="https://www.linkedin.com/in/pedro-cola%C3%A7o-929097302/">pedrocolaço</a>
 
 
