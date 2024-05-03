@@ -31,62 +31,15 @@ The main objective of the project is to create an authentication with bank syste
 ![image](https://github.com/ErickMiyagi/Auth-System/assets/90419609/ed0fbf09-87f6-4d41-b426-1b47047eb5ef)
 
 
-## Documentação da API
-
-#### Retorna todos os usuários
-
-```http
-  GET /users
-```
-
-| Parâmetro   | Tipo       | Descrição                           |
-| :---------- | :--------- | :---------------------------------- |
-| `users` | `string` | **Retorna todos os usuários** |
-
-#### Retorna um usuário
-
-```http
-  GET /users/id
-```
-
-| Parâmetro   | Tipo       | Descrição                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `id`      | `Long` | **Retorna usuário por ID** |
-
-#### Deleta um usuário
-
-```http
-  DELETE /users/id
-```
-
-| Parâmetro   | Tipo       | Descrição                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `id`      | `Long` | **Deleta usuário por ID** |
-
-#### Cria um usuário
-
-```http
-  POST /users/auth/register
-```
-
-| Parâmetro   | Tipo       | Descrição                                   |
-| :---------- | :--------- | :------------------------------------------ |
-| `login`      | `String` | **Cria um login** |
-| `password`   | `String` | **Cria uma senha** |
-| `email`      | `String` | **Cria um email** |
-| `roles`      | `Role`   | **Cria um CPF ou CNPJ** |
-
-
-
-## Documentação
+## Documents
 
 All references about this project they were removed [Spring Framework](https://glysns.gitbook.io/spring-framework/) and [Swagger](https://www.bezkoder.com/spring-boot-swagger-3/)
 
 # Colaborators
 
 This project was developed by 
-<a href="https://www.linkedin.com/in/erick-miyagi-310016258/" target="blank"/>ErickMiyagi</a> and
-<a href="https://www.linkedin.com/in/leonardo-lermen-768769242/" target="blank"/>leonardolermen</a>
+<a href="https://www.linkedin.com/in/erick-miyagi-310016258/" target="blank"/>ErickMiyagi</a> ,
+<a href="https://www.linkedin.com/in/leonardo-lermen-768769242/" target="blank"/>leonardolermen</a> and
 <a href="https://www.linkedin.com/in/pedro-cola%C3%A7o-929097302/">pedrocolaço</a>
 
 
