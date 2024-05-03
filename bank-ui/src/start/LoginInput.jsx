@@ -35,12 +35,15 @@ export const LoginInput = () => {
         <>
         <div style={{
         width: "100vw",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: 'center',
         height: "100vh",
         overflow: "hidden",
       }}>
         <div className="col-sm-9 col-md-7 col-lg-6 col-xl-4 m-auto px-5">
           <div className="card border-0 shadow rounded-3 my-5 bg-light">
-            <div className="card-body p-4 p-sm-5">
+            <div className="card-body p-4 p-sm-5" style={{alignItems: 'center', justifyContent: 'center'}}>
               <h3 className="card-title text-center mb-3 fw-light fs-3 fw-semibold">
                 Login
               </h3>
@@ -91,7 +94,7 @@ export const LoginInput = () => {
                     className="btn btn-primary text-uppercase fw-semibold"
                     type="submit"
                   >
-                    ENTRAR
+                    frances
                   </button>
                 </div>
                 <div style={{textAlign: "center"}}>

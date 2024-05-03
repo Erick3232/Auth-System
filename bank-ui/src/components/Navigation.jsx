@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { MdAccountCircle } from "react-icons/md";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import "../pages/menu/Menu.css"
 
 export const Navigation = ({login}) => {
     const [user, setUser] = useState(null);

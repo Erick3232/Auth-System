@@ -45,13 +45,13 @@
   transform: translateY(-50%);
   height: 190vh;
   width: 1px;
-  background-color: #2e2e2e;
+  background-color: #000000;
 }
 .app {
     width: 100%;
     height: 100%;
     margin: 0;
-    background-color: #26282f;
+    background-color: #313131;
     padding: 0.2vw 3vw;
     display: flex;
     flex-direction: column;
@@ -131,6 +131,12 @@
   .logo-title span:last-child {
     color: var(--c-text-tertiary);
   }
+  .service-img{
+    width: 15%;
+    height: 15%;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
   .user-profile {
     display: flex;
     align-items: center;
@@ -178,7 +184,7 @@
     align-items: center;
     text-decoration: none;
     transition: 0.25s ease;
-    color: #c2bdbd;
+    color:rgb(39, 39, 39);
   }
   .navigation .menu * {
     transition: 0.25s ease;
@@ -193,7 +199,7 @@
   }
   .navigation .menu:hover, .navigation .menu:focus {
     transform: translateX(4px);
-    color: #fff;
+    color: black;
   }
   .footer {
     margin-top: 220px;
@@ -203,19 +209,19 @@
     font-size: 1.5rem;
     line-height: 1.125;
     display: flex;
-    color: #fff;  
+    color: black;  
     align-items: flex-start;
   }
   .footer h1 small {
     font-size: 0.5em;
     margin-left: 0.25em;
-    color: #fff;
+    color: black;
   }
   .footer div {
     border-top: 1px solid var(--c-gray-600);
     padding-top: 1rem;
     font-size: 0.75rem;
-    color: #fff;
+    color: black;
   }
   .tiles {
     display: grid;

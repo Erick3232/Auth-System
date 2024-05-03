@@ -16,6 +16,8 @@
   .wrapper {
       background-color: #161616;
       margin-left: 32%;
+      justify-content: center;
+      align-items: center;
       color: #fff;
       width: 35vw;
       height: 60vh;
@@ -69,6 +71,7 @@
   }
   .img{
     width: 12%;
+    height: 10%;
     margin-left: 44%;
   }
 

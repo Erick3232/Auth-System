@@ -24,7 +24,7 @@ export const Header = () => {
             </div>
             <div className="app-header-navigation">
                 <div className='tabs'>
-                    <Navbar className="tabs" bg="dark" data-bs-theme="dark">
+                    <Navbar className="tabs" data-bs-theme="dark">
                         <Container>
                             <Navbar.Brand className="active" href="/menu">Home</Navbar.Brand>
                             <Nav className="me-auto">
@@ -42,8 +42,8 @@ export const Header = () => {
                 </Routes>
             </div>
             <div style={{marginLeft: "40%", marginBottom: "5%"}}>   
-            <Button variant="secondary" size="sm" style={{width: "30%", marginRight: "10px", marginLeft: "50px"}}>Sign up</Button>
-            <Button variant="outline-light" style={{width: "41%", height: "33px"}}>Log out</Button>
+            <Button variant="success" style={{marginRight: "20px"}}>Sign up</Button>
+            <Button variant="outline-dark">Log out</Button>{' '}
             </div>
         </header>
     )

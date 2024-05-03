@@ -62,7 +62,8 @@ public class AuthController {
         return ResponseEntity.ok(new LoginResponseDTO(generateToken));
     }
    
-    @GetMapping("/getId/{login}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/{login}")
     public ResponseEntity<User> getLogin(@PathVariable String login){
         User newUser = userService.findIdByLogin(login);
         return new ResponseEntity<>(newUser,HttpStatus.OK);

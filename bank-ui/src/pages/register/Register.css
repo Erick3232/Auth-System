@@ -4,7 +4,8 @@
     box-sizing: border-box;
   }
   .register-body{
-    height: 80px;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     background-image: url("../../assets/background.jpeg");
     background-repeat: no-repeat;
@@ -21,12 +22,12 @@
   .container h1{
     text-align: center;
     font-size: 36px;
-    
+    padding: 20px;
   }
   .container .input-box{
     position: relative;
     width: 100%;
-    height: 50px;
+    height: 10px;
     margin: 30px 0;
     color: #fff;
     padding: 30px 60px 30px 60px;
@@ -46,9 +47,9 @@
     padding: 20px 20px 20px 20px;
   }
   .logo{
-    width: 11%;
-    height: 20%;
-    margin-left:45.8%;
+    width: 8%;
+    height: 10%;
+    margin-left: 47%;
   }
   .input-box input::placeholder{
     color: #fff;
