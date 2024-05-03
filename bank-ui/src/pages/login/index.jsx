@@ -1,10 +1,9 @@
 import './Login.css';
-import { LoginInput } from '../../start/LoginInput';
 
 const Login = () => {
   return (
     <div className='login-body'>
-        <LoginInput/>
+        <h1>Login</h1>
     </div>
   );
 };
