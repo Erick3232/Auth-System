@@ -9,7 +9,8 @@ const ProjectRoutes = () => {
       <Routes>
         <Route element = { <Login/> }  path="/login" exact />
         <Route element = { <Register/> }  path="/register" />
-        <Route element = {<Menu/>} path="/menu"></Route>
+        <Navigate to={ <Menu/> }></Navigate>
+        <Route element = { <Menu/>} path="/menu"></Route>
       </Routes> 
      </BrowserRouter>
   )
