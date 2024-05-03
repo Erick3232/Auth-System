@@ -1,11 +1,9 @@
 import './Register.css';
-const Register = () => {
-
+import { RegisterInput } from "../../components/start/RegisterInput"
+export const Register = () => {
     return (
         <div className='register-body'>
-            <h1>Register</h1>
+            <RegisterInput/>
         </div>
     );
 };
-
-export default Register;

@@ -1,11 +1,12 @@
 import './Login.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Login = () => {
+import { LoginInput }  from "../../components/start/LoginInput"
+export const Login = () => {
   return (
     <div className='login-body'>
-        <h1>Login</h1>
+      <LoginInput/>
     </div>
   );
 };
-
 export default Login;
