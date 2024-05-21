@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +16,7 @@ import com.springauth.system.DTOs.AuthenticationDTO;
 import com.springauth.system.DTOs.LoginResponseDTO;
 import com.springauth.system.DTOs.RegisterDTO;
 import com.springauth.system.entities.User;
+import com.springauth.system.services.auth.AuthService;
 import com.springauth.system.services.token.TokenService;
 import com.springauth.system.services.user.UserService;
 
@@ -33,10 +33,7 @@ public class AuthController {
     private UserService userService;
 
     @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private TokenService tokenService;
+    private AuthService authService;
 
 
     @Operation(summary = "Register operation")
@@ -44,8 +41,7 @@ public class AuthController {
     @PostMapping("/process")
     public ResponseEntity<User> createUser(@RequestBody RegisterDTO data) {
         if(userService.findByDocument(data.document(), data.rg(), data.email()) == true){
-        String encoded = new BCryptPasswordEncoder().encode(data.password());
-        User newUser = userService.registerUser(data, encoded);
+        User newUser = userService.registerUser(data);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
         } 
         else return ResponseEntity.badRequest().build();
@@ -56,10 +52,8 @@ public class AuthController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/processLogin")
     public ResponseEntity login(@RequestBody AuthenticationDTO data) {
-        var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
-        var auth = this.authenticationManager.authenticate(usernamePassword);
-        var generateToken = tokenService.generateToken((User) auth.getPrincipal());
-        return ResponseEntity.ok(new LoginResponseDTO(generateToken));
+        var token = authService.Login(data);
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
    
     @CrossOrigin(origins = "http://localhost:3000")

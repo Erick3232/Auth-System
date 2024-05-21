@@ -2,10 +2,9 @@ package com.springauth.system.services.user;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import com.springauth.system.DTOs.RegisterDTO;
 import com.springauth.system.DTOs.UserDTO;
 import com.springauth.system.entities.User;
@@ -46,10 +45,11 @@ public class UserService {
         return newUser;
     }
 
-    public User registerUser(RegisterDTO data, String encodedPassword){
-        User newUser = new User(data, encodedPassword);
-        this.saveUser(newUser);
-        return newUser;
+    public User registerUser(RegisterDTO data){  
+            String encodedPassword = new BCryptPasswordEncoder().encode(data.password());
+            User newUser = new User(data, encodedPassword);
+            this.saveUser(newUser);
+            return newUser;  
     }
 
     public void saveUser(User user){
