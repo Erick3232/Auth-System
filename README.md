@@ -8,15 +8,15 @@ This project is an API built using **Java, Java Spring, Mongo as database and Sp
 
 The main objective of the project is to create an authentication with bank system where the login, registration, password recovery, account management, add cards for transfers and deposit is the main funcionality. 
 ## 🛠 Skills
-- 🌐 Web Development and Library: Java | HTML | CSS | JavaScript | React | Bootstrap | Axios 
+- 🌐 Web Development and Library: Java | CSS | JavaScript | React | Bootstrap | Axios 
 
 - 📱 App Development: React Native + Expo
 
 - 🛠 Framework: Spring Boot 3 | Spring Data | Spring Security 6
 
-- 🛢️ DataBases: MongoDB, Redis cache
+- 🛢️ DataBases: MongoDB e Redis
   
-- 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API
+- 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API e Docker
 
 
 ## Roadmap
