@@ -46,7 +46,7 @@ export const LoginInput = () => {
               <h3 className="card-title text-center mb-3 fw-light fs-3 fw-semibold">
                 Login
               </h3>
-              <hr className='lines'/>
+              <hr style={{backgroundColor: "black",border: "10px", height: "3px", width: "25%", marginLeft: "100px"}}/>
               <form onSubmit={handleSubmit}>
                 <div className="form-floating mb-3">
                   <input
@@ -93,7 +93,7 @@ export const LoginInput = () => {
                     className="btn btn-primary text-uppercase fw-semibold"
                     type="submit"
                   >
-                    frances
+                   LOG IN
                   </button>
                 </div>
                 <div style={{textAlign: "center"}}>
