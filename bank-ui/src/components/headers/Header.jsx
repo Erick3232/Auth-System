@@ -7,21 +7,25 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import { FaLock } from "react-icons/fa";
+
 
 
 import logo from "../../assets/logo.png"
 
 export const Header = () => {
-    return(
-        <>
-        <Navbar bg="dark" data-bs-theme="dark">
+  return (
+    <>
+      <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-        <Image src={logo} alt="Logo" className="mr-2" width="120vw" height="100vh"/> 
+          <Link to={"/menu"}>
+          <Image src={logo} alt="Logo" className="mr-2" width="120vw" height="100vh" />
+          </Link>
           <Nav className="me-auto">
-            <Nav.Link href="#home">For You</Nav.Link>
-            <Nav.Link href="#features">For Business</Nav.Link>
-            <NavDropdown title="Explore" id="basic-nav-dropdown">
+            <Nav.Link href="/home" className="nav-text" style={{ marginRight: '40px' }}>For You</Nav.Link>
+            <Nav.Link href="/features" style={{ marginRight: '40px' }}>For Business</Nav.Link>
+            <NavDropdown title="Explore" id="basic-nav-dropdown" style={{ marginRight: '40px' }}>
               <NavDropdown.Item href="#action/3.1">About us Auth Bank</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Finance Education
@@ -35,19 +39,19 @@ export const Header = () => {
           </Nav>
 
           <Form inline>
-              <Row className="align-items-center">
-                <Col xs="auto">
-                </Col>
-                <Col xs="auto">
-                  <Button type="submit"
-                    style={{paddingLeft: '30px', width: "8vw", marginLeft: "120px"}}
-                  >Login</Button>
-                </Col>
-                <FaLock color='white' style={{position: "relative", bottom: "28px", left: "20px"}}/>
-              </Row>
-            </Form>
-          </Container>
+            <Row className="align-items-center">
+              <Col xs="auto">
+              </Col>
+              <Col xs="auto">
+                <Link to="/login">
+                  <Button type="submit" style={{ paddingLeft: '30px', width: "8vw", marginLeft: "120px" }}>Login</Button>
+                </Link>
+              </Col>
+              <FaLock color='white' style={{ position: "relative", bottom: "28px", left: "20px" }} />
+            </Row>
+          </Form>
+        </Container>
       </Navbar>
-        </>
-    )
+    </>
+  )
 }
