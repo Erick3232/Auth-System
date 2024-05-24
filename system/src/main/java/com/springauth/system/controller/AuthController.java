@@ -53,7 +53,8 @@ public class AuthController {
     @PostMapping("/processLogin")
     public ResponseEntity login(@RequestBody AuthenticationDTO data) {
         var token = authService.Login(data);
-        return ResponseEntity.ok(new LoginResponseDTO(token));
+        User authenticatedUser = userService.findIdByLogin(data.login());
+        return ResponseEntity.ok(new LoginResponseDTO(token, authenticatedUser.getId()));
     }
    
     @CrossOrigin(origins = "http://localhost:3000")

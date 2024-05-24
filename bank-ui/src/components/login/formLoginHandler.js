@@ -5,9 +5,9 @@ export const handleSubmit = async (event,login,navigate, setMensagem) => {
     const url = 'http://localhost:8080/auth/processLogin';
     try {
       const response = await axios.post(url, login);
-      const token = response.data.token;
+      const { id } = response.data
       console.log("Login bem-sucedido", response.data);
-      navigate(`/menu/${token}`);
+      navigate(`/menu/${id}`);
     } catch (error) {
       setMensagem("Login ou senha incorreta!");
     }
