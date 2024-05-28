@@ -1,9 +1,18 @@
 .app {
     font-family: "Roboto";
-
+    width: 100%;
+    height: 100%;
 }
-.me-auto{
+
+.me-auto {
     margin-left: 120px;
     font-size: 18px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 

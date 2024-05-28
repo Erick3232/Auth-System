@@ -1,13 +1,22 @@
+import { Cards } from '../components/body/Cards'
+import { Footer } from '../components/body/Footer'
+import Navigation from '../components/body/Navigation'
 import { Header } from '../components/headers/Header'
-import { HandleLogin } from '../components/headers/loginHeader'
 import './Menu.css'
 
 export const Menu = () => {
-    return(
+    return (
         <div className="app" >
-            <HandleLogin>
-            <Header/>
-            </HandleLogin>
+            <Header />
+                <div className='carrousel-navigation'>
+                    <Navigation/>
+                    <div className="card-container">
+                        <Cards/>
+                    </div>
+                </div>
+            <div className="footer">
+                <Footer/>
+            </div>
         </div>
     )
 }

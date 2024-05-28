@@ -11,6 +11,7 @@ const ProjectRoutes = () => {
         <Route element = { <Register/> }  path="/register" />
         <Route element = {<Navigate to="/menu" />} path="/" />
         <Route element = {<Menu/>} path="/menu/:token"/>
+        <Route element = {<Menu/>} path="/menu"/>
       </Routes> 
      </BrowserRouter>
   )

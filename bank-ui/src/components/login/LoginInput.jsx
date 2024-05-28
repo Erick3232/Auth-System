@@ -10,7 +10,6 @@ export const LoginInput = () => {
   const navigate = useNavigate();
   const [mensagem, setMensagem] = useState(null);
 
-
   return (
     <>
       <div style={{

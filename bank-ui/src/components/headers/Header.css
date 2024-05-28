@@ -1,0 +1,42 @@
+.custom-navbar {
+    background-color: #343a40;
+  }
+  
+  .navbar-logo {
+    width: 120px;
+    height: auto;
+  }
+  
+  .nav-link-custom {
+    margin-right: 50px;
+    color: #adb5bd !important; 
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-link-custom:hover,
+  .nav-link-custom:focus {
+    background-color: #f8f9fa; 
+    color: #343a40 !important; 
+    border-radius: 5px; 
+    padding: 5px 10px; 
+  }
+  .login-button {
+    width: 100px;
+    background-color:  #007bff;
+    border: none;
+    font-weight: 600;
+    color: white;
+    transition: background-color 0.3s; 
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+}
+  
+  .lock-icon {
+    position: relative;
+    bottom: 2px;
+    right: 95px;
+  }
+  
