@@ -8,7 +8,8 @@ This project is an API built using **Java,Spring Boot, MongoDB as database and S
 
 The main objective of the project is to create an authentication with bank system where the login, registration, password recovery, account management, add cards for transfers and deposit is the main funcionality. 
 ## 🛠 Skills
-- 🌐 Web Development and Library: Java | CSS | JavaScript | React | Bootstrap | Axios 
+
+- 🌐 Language: Java  
 
 - 📱 App Development: React Native + Expo
 
