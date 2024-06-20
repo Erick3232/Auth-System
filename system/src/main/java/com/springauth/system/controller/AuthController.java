@@ -3,8 +3,6 @@ package com.springauth.system.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,9 +15,7 @@ import com.springauth.system.DTOs.LoginResponseDTO;
 import com.springauth.system.DTOs.RegisterDTO;
 import com.springauth.system.entities.User;
 import com.springauth.system.services.auth.AuthService;
-import com.springauth.system.services.token.TokenService;
 import com.springauth.system.services.user.UserService;
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -40,7 +36,7 @@ public class AuthController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/process")
     public ResponseEntity<User> createUser(@RequestBody RegisterDTO data) {
-        if(userService.findByDocument(data.document(), data.rg(), data.email()) == true){
+        if(userService.findByDocument(data.document()) == true){
         User newUser = userService.registerUser(data);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
         } 
@@ -53,14 +49,14 @@ public class AuthController {
     @PostMapping("/processLogin")
     public ResponseEntity login(@RequestBody AuthenticationDTO data) {
         var token = authService.Login(data);
-        User authenticatedUser = userService.findIdByLogin(data.login());
+        User authenticatedUser = userService.findByLogin(data.login());
         return ResponseEntity.ok(new LoginResponseDTO(token, authenticatedUser.getId()));
     }
    
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{login}")
     public ResponseEntity<User> getLogin(@PathVariable String login){
-        User newUser = userService.findIdByLogin(login);
+        User newUser = userService.findByLogin(login);
         return new ResponseEntity<>(newUser,HttpStatus.OK);
     }
 
