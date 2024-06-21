@@ -28,10 +28,7 @@ public class UserService {
 
     public boolean findByDocument(String document) {
         Optional<User> findedUser = userRepository.findByDocument(document);
-        if (findedUser == null) {
-            return true;
-        } else
-            return false;
+        return findedUser.isEmpty();
     }
 
     public User findByLogin(String login) {

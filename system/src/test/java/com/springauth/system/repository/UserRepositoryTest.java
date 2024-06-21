@@ -1,23 +1,19 @@
-package com.springauth.system;
+package com.springauth.system.repository;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.springauth.system.DTOs.RegisterDTO;
 import com.springauth.system.entities.User;
-import com.springauth.system.entities.UserRole;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Optional;
 
 import com.springauth.system.repositories.UserRepository;
-
-import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
 public class UserRepositoryTest {
@@ -41,9 +37,17 @@ public class UserRepositoryTest {
         Optional<User> foundUser = this.userRepository.findByDocument(document);
 
         User getUserDocument = foundUser.get();
-        assertNotNull(foundUser);
         assertEquals(document, getUserDocument.getDocument());
         assertTrue(foundUser.isPresent());
+    }
+
+    @Test
+    @DisplayName("Should not find Document")
+    void dontFindUserByDocument(){
+        String document = "123.456.789-1234";
+        
+        Optional<User> foundUser = this.userRepository.findByDocument(document);
+        assertTrue(foundUser.isEmpty());
     }
 
     @Test
@@ -58,8 +62,16 @@ public class UserRepositoryTest {
         } 
 
         String getUserLogin = existUser.getLogin();
-        assertNotNull(getUserLogin);
         assertEquals(login, getUserLogin);
         assertTrue(existUser.isEnabled());
+    }
+
+    @Test
+    @DisplayName("Should not find Login")
+    void dontFindUserByLogin(){
+        String login = "diego123";
+        User existUser = this.userRepository.findByLogin(login);
+
+        assertNull(existUser);
     }
 }
