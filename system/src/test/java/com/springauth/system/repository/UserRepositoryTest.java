@@ -24,16 +24,7 @@ public class UserRepositoryTest {
     @Test
     @DisplayName("Find Document")
     void findUserByDocument(){
-        String document = "123.456.789-12";
-        Optional<User> existingUser = this.userRepository.findByDocument(document);
-        User user;
-
-        if(existingUser.isPresent()){
-            user = existingUser.get();
-        } else {
-            user = null;
-        }
-        
+        String document = "123.456.789-12";        
         Optional<User> foundUser = this.userRepository.findByDocument(document);
 
         User getUserDocument = foundUser.get();
@@ -44,7 +35,7 @@ public class UserRepositoryTest {
     @Test
     @DisplayName("Should not find Document")
     void dontFindUserByDocument(){
-        String document = "123.456.789-1234";
+        String document = "123.456.789-12";
         
         Optional<User> foundUser = this.userRepository.findByDocument(document);
         assertTrue(foundUser.isEmpty());
@@ -55,12 +46,7 @@ public class UserRepositoryTest {
     void findUserByLogin(){
         String login = "diego";
         User existUser = this.userRepository.findByLogin(login);
-        String user;
-
-        if(existUser.isEnabled()){
-            user = existUser.getLogin();
-        } 
-
+        
         String getUserLogin = existUser.getLogin();
         assertEquals(login, getUserLogin);
         assertTrue(existUser.isEnabled());
@@ -72,6 +58,7 @@ public class UserRepositoryTest {
         String login = "diego123";
         User existUser = this.userRepository.findByLogin(login);
 
-        assertNull(existUser);
+        String getNotUserLogin = existUser.getLogin();
+        assertEquals(login, getNotUserLogin);
     }
 }

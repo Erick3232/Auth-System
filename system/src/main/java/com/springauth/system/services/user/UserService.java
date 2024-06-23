@@ -38,15 +38,13 @@ public class UserService {
 
     public User createUser(UserDTO data) {
         User newUser = new User(data);
-        this.saveUser(newUser);
-        return newUser;
+        return userRepository.save(newUser);
     }
 
     public User registerUser(RegisterDTO data) {
         String encodedPassword = new BCryptPasswordEncoder().encode(data.password());
         User newUser = new User(data, encodedPassword);
-        this.saveUser(newUser);
-        return newUser;
+        return userRepository.save(newUser);
     }
 
     public void saveUser(User user) {
