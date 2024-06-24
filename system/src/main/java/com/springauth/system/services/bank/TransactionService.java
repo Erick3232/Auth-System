@@ -19,15 +19,19 @@ public class TransactionService {
 
     @Autowired
     private AcountService acountService;
+
     @Autowired
     private TransactionRepository transactionRepository;
     @Autowired
     private ExternalAuthorizationService externalAuthorizationService;
 
-    public Transaction processTransaction(TransactionDTO transaction)throws Exception{
-        User payer = acountService.findById(transaction.payerId());
-        User payee = acountService.findById(transaction.payeeId());
+    
+    public Transaction processTransaction(TransactionDTO transaction) throws Exception{
+        User payer = acountService.findById(transaction.payer());
+        User payee = acountService.findById(transaction.payee());
         BigDecimal amount = transaction.amount();
+
+        acountService.validateAmount(payer, amount);
 
         Transaction newTransaction = new Transaction();
         newTransaction.setPayer(payer);
@@ -48,12 +52,13 @@ public class TransactionService {
         }
 
         payer.setBalance(payer.getBalance().subtract(amount));
-        payee.setBalance(payee.getBalance().add(amount));
+        payee.setBalance(payee.getBalance().add(amount));                   
 
-        acountService.savUser(payee);
-        acountService.savUser(payer);
+        
 
         transactionRepository.save(newTransaction);
+        acountService.updateAccount(payer);
+        acountService.updateAccount(payee);
 
         return newTransaction;
     }

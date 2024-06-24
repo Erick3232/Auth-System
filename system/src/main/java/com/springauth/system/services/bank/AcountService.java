@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.springauth.system.DTOs.BalanceDTO;
 import com.springauth.system.entities.User;
+import com.springauth.system.entities.UserRole;
 import com.springauth.system.exceptions.ResourceNotFoundException;
 import com.springauth.system.repositories.UserRepository;
 
@@ -34,7 +35,16 @@ public class AcountService {
         return receiver;
     }
 
-    public User savUser(User user){
-       return this.userRepository.save(user);
+    public void validateAmount(User user, BigDecimal amount) throws Exception{
+        if(user.getRole() == UserRole.CNPJ){
+            throw new RuntimeException("CNPJ NÃO PODE REALIZAR TRANSFERÊNCIAS.");
+        }
+        if(user.getBalance().compareTo(amount) < 0){
+            throw new RuntimeException("SALDO INSUFICIENTE PARA REALIZAR A TRANSAÇÃO.");
+        }
+    }
+
+    public void updateAccount(User user) {
+        userRepository.save(user);
     }
 }

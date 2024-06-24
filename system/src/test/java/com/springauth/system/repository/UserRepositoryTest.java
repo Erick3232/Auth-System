@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.springauth.system.entities.User;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Optional;
