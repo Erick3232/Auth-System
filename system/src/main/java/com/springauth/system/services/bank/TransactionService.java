@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.springauth.system.DTOs.TransactionDTO;
 import com.springauth.system.entities.Transaction;
 import com.springauth.system.entities.User;
+import com.springauth.system.entities.UserRole;
 import com.springauth.system.repositories.TransactionRepository;
 
 
@@ -21,6 +22,9 @@ public class TransactionService {
 
     @Autowired
     private TransactionRepository transactionRepository;
+    @Autowired
+    private ExternalAuthorizationService externalAuthorizationService;
+
     
     public Transaction processTransaction(TransactionDTO transaction) throws Exception{
         User payer = acountService.findById(transaction.payer());
@@ -35,8 +39,22 @@ public class TransactionService {
         newTransaction.setAmount(amount);
         newTransaction.setTimestamp(LocalDateTime.now());
 
+        if(payer.getRole() == UserRole.CNPJ){
+            throw new RuntimeException("CNPJ NÃO PODE REALIZAR TRANSFERÊNCIAS.");
+        } 
+
+        if(payer.getBalance().compareTo(amount) < 0){
+            throw new RuntimeException("SALDO INSUFICIENTE PARA REALIZAR A TRANSAÇÃO.");
+        }
+        
+        if(externalAuthorizationService.externalAuthorization(payer, amount) == false){
+            throw new RuntimeException("Transação Não authorizada");
+        }
+
         payer.setBalance(payer.getBalance().subtract(amount));
         payee.setBalance(payee.getBalance().add(amount));                   
+
+        
 
         transactionRepository.save(newTransaction);
         acountService.updateAccount(payer);

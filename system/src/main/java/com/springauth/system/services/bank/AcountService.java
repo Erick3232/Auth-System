@@ -51,6 +51,7 @@ public class AcountService {
             throw new RuntimeException("SALDO INSUFICIENTE PARA REALIZAR A TRANSAÇÃO.");
         }
     }
+
     public void updateAccount(User user) {
         userRepository.save(user);
     }
