@@ -10,6 +10,7 @@ import com.springauth.system.repositories.UserRepository;
 
 @Service
 public class AuthorizationService implements UserDetailsService {
+    
     @Autowired
     private UserRepository userRepository;
 

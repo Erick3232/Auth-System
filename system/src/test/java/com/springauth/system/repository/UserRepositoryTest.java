@@ -21,7 +21,7 @@ public class UserRepositoryTest {
     UserRepository userRepository;
     
     @Test
-    @DisplayName("Find Document")
+    @DisplayName("Find Document - User found")
     void findUserByDocument(){
         String document = "123.456.789-12";        
         Optional<User> foundUser = this.userRepository.findByDocument(document);
@@ -32,7 +32,7 @@ public class UserRepositoryTest {
     }
 
     @Test
-    @DisplayName("Should not find Document")
+    @DisplayName("Should not find Document - User not found")
     void dontFindUserByDocument(){
         String document = "123.456.789-12";
         

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.springauth.system.DTOs.BalanceDTO;
@@ -23,7 +24,14 @@ public class AcountService {
         Optional<User> obj = userRepository.findById(id);
         return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
-
+    public String findIdByDocument(String document){
+        Optional<User> obj = userRepository.findByDocument(document);
+        if(obj.isPresent()){
+            return obj.get().getId();
+        } else {
+            throw new UsernameNotFoundException("User not found with document: " + document);
+        }
+    }
     public User addBalance(BalanceDTO balancedDto, String id) throws Exception{
         User receiver = findById(id);
         if(balancedDto.balance().compareTo(BigDecimal.ZERO) < 0){
