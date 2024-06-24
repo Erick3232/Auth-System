@@ -9,5 +9,5 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @EnableMongoRepositories
 public interface TransactionRepository extends MongoRepository<Transaction, String> {
-    Optional<Transaction>findById(String id);
+    Optional<Transaction> findById(String id);
 }
