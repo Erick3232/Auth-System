@@ -21,7 +21,9 @@ public class TransactionService {
     private AcountService acountService;
     @Autowired
     private TransactionRepository transactionRepository;
-    
+    @Autowired
+    private ExternalAuthorizationService externalAuthorizationService;
+
     public Transaction processTransaction(TransactionDTO transaction)throws Exception{
         User payer = acountService.findById(transaction.payerId());
         User payee = acountService.findById(transaction.payeeId());
@@ -40,8 +42,16 @@ public class TransactionService {
         if(payer.getBalance().compareTo(amount) < 0){
             throw new RuntimeException("SALDO INSUFICIENTE PARA REALIZAR A TRANSAÇÃO.");
         }
+        
+        if(externalAuthorizationService.externalAuthorization(payer, amount) == false){
+            throw new RuntimeException("Transação Não authorizada");
+        }
+
         payer.setBalance(payer.getBalance().subtract(amount));
         payee.setBalance(payee.getBalance().add(amount));
+
+        acountService.savUser(payee);
+        acountService.savUser(payer);
 
         transactionRepository.save(newTransaction);
 

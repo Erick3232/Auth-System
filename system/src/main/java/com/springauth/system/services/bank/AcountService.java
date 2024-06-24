@@ -33,4 +33,8 @@ public class AcountService {
 
         return receiver;
     }
+
+    public User savUser(User user){
+       return this.userRepository.save(user);
+    }
 }
