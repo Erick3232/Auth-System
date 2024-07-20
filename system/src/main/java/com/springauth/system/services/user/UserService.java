@@ -3,6 +3,7 @@ package com.springauth.system.services.user;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.springauth.system.DTOs.RegisterDTO;
@@ -17,15 +18,19 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Cacheable("users")
     public List<User> getAllUsers() {
+        System.out.println("Fetching all users from database...");
         return this.userRepository.findAll();
     }
 
+    @Cacheable(value = "users",key = "#userId")
     public User findById(String userId) {
         Optional<User> obj = userRepository.findById(userId);
         return obj.orElseThrow(() -> new ResourceNotFoundException(userId));
     }
 
+    @Cacheable(value = "users",key = "#document")
     public boolean findByDocument(String document) {
         Optional<User> findedUser = userRepository.findByDocument(document);
         return findedUser.isEmpty();

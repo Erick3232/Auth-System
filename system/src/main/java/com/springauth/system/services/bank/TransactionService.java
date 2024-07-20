@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.springauth.system.DTOs.TransactionDTO;
@@ -61,6 +62,7 @@ public class TransactionService {
         return newTransaction;
     }
 
+    @Cacheable("transactions")
     public List<Transaction> getAllTransactions(){
         return this.transactionRepository.findAll();
     }
