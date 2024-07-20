@@ -2,7 +2,6 @@ package com.springauth.system.repository;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
@@ -18,7 +17,7 @@ import com.springauth.system.entities.User;
 import com.springauth.system.repositories.UserRepository;
 
 @SpringBootTest
-public class TransactionRepository {
+public class TransactionRepositoryTest {
 
     @Autowired
     private UserRepository userRepository;

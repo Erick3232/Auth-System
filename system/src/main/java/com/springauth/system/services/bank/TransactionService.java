@@ -54,8 +54,6 @@ public class TransactionService {
         payer.setBalance(payer.getBalance().subtract(amount));
         payee.setBalance(payee.getBalance().add(amount));                   
 
-        
-
         transactionRepository.save(newTransaction);
         acountService.updateAccount(payer);
         acountService.updateAccount(payee);
