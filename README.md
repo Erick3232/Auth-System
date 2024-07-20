@@ -13,18 +13,19 @@ The main objective of the project is to create an authentication with bank syste
 
 - 📱 App Development: React Native + Expo
 
-- 🛠 Framework: Spring Boot 3 | Spring Data | Spring Security 6 | Spring Cache
+- 🛠 Framework: Spring Boot 3 | Spring Data | Spring Security 6 | Spring Cache | Spring Cloud Feign
 
 - 🛢️ DataBases: MongoDB e Redis
   
 - 🔧 Tools: Postman, Apache Maven, Swagger, JWT Token, JPA, Hibernate, REST API e Docker
 
 
-## Roadmap
+## System Design
 
-- Login and Register Page with React, where he is the SPA(Single Page Application)  
+- Architecture System
 
-![image](Diagram.png)
+![image](https://github.com/user-attachments/assets/8f9bc983-aafc-4b97-9755-f477930b18f2)
+
 
 
 - This UML exemplifies the classes and their functions in each
