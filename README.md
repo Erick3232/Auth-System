@@ -28,9 +28,9 @@ The main objective of the project is to create an authentication with bank syste
 
 
 
-- This UML exemplifies the classes and their functions in each
+- User and Transactions in funcionality and your fluxogram
 
-![image](https://github.com/ErickMiyagi/Auth-System/assets/90419609/ed0fbf09-87f6-4d41-b426-1b47047eb5ef)
+![image](https://github.com/user-attachments/assets/5bbc6623-19ce-412d-a01e-a4894560f455)
 
 
 ## Documents
